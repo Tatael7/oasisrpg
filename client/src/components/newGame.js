@@ -1,4 +1,4 @@
-// Menu.js
+
 import React, { Component } from 'react';
 
 class Home extends Component {
@@ -19,7 +19,7 @@ Leader Board
     );
   }
 }
-export default Menu;
+export default newGame;
 
 
 {/*

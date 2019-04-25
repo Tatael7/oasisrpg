@@ -11,19 +11,20 @@ class App extends Component {
     return (
     <Router>
         <div>
-          <h2>Welcome to React Router Tutorial</h2>
+          <h2>Swordmaster of Ginaz</h2>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
-            <li><Link to={'/'} className="nav-link"> New Game </Link></li>
+            <li><Link to={'/'} className="nav-link"> Menu </Link></li>
             <li><Link to={'/leaderBoard'} className="nav-link">Leader Board</Link></li>
             <li><Link to={'/about'} className="nav-link">Log In</Link></li>
           </ul>
           </nav>
           <hr />
           <Switch>
-              <Route exact path='/' component={newGame} />
-              <Route path='/leaderBoard' component={leaderBoard} />
+              <Route exact path='/' component={Menu} />
+              <Route exact path='/newGame' component={newGame} />
               <Route path='/logIn' component={logIn} />
+              <Route path='/leaderBoard' component={leaderBoard} />
           </Switch>
         </div>
       </Router>
