@@ -33,9 +33,7 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-  // clickHandler = () => {
-  //   //code here
-  // }
+  
 
   render() {
     return (
@@ -54,8 +52,7 @@ class App extends Component {
             </Row>
             <Row>
               <BattleMenu
-                // clickHandler={this.clickHandler}
-                // test='TEST'
+               
               />
             </Row>
         </Container>
