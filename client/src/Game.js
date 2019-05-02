@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import ArrowUp from "./components/ArrowUp"
 import ArrowLeft from "./components/ArrowLeft";
@@ -10,13 +9,12 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import API from "./utils/API";
 import { Container, Row, Col } from "./components/Grid";
-import Menu from "./components/Menu";
 
 class App extends Component {
-  state = {
-    recipes: [],
-    recipeSearch: ""
-  };
+  // state = {
+  //   recipes: [],
+  //   recipeSearch: ""
+  // };
 
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
@@ -40,15 +38,15 @@ class App extends Component {
   render() {
     return (
       <div>
-       <Menu/>
+       
         <Container>
           <Row>
               <Col size="md-3">
                 <DuncanIdaho/>
               </Col>
               <Col size="md-6"></Col>
-              <Col size="md-3"> 
-                {/* <BeastHarkonnen/>  */}
+              <Col size="md-3">
+                {/* <BeastHarkonnen/> */}
                 <SardaukarGrunt/>
               </Col>
             </Row>
@@ -61,14 +59,6 @@ class App extends Component {
       </div>
     );
   }
-=======
-import React from "react";
-
-class Game extends React.Component {
-    render() {
-        return <h1>This is a test</h1>
-    };
->>>>>>> 2ef9cda2159cef11148e532ba7fc58f9cbd06b6e
 }
 
-export default Game;
+export default App;

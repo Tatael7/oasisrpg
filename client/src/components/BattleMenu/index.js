@@ -4,7 +4,6 @@ import ArrowUp from "../ArrowUp";
 import ArrowRight from "../ArrowRight";
 import PlayerStats from "../PlayerStats";
 import { Container } from "../Grid";
-import { ENOTEMPTY } from "constants";
 
 let duncanIdaho = {
     shields: 600
@@ -78,7 +77,7 @@ function BattleMenu () {
         let vida = enemy.shields;
         console.log(`this is the enemy's health ${vida}`);
         if(vida === 0 || vida < 0) {
-            console.log(`Enemy is dead)`);
+            console.log(`Enemy is dead`);
         };
     };
 
