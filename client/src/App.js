@@ -9,6 +9,7 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import API from "./utils/API";
 import { Container, Row, Col } from "./components/Grid";
+import Menu from "./components/Menu";
 
 class App extends Component {
   state = {
@@ -38,15 +39,15 @@ class App extends Component {
   render() {
     return (
       <div>
-       
+       <Menu/>
         <Container>
           <Row>
               <Col size="md-3">
                 <DuncanIdaho/>
               </Col>
               <Col size="md-6"></Col>
-              <Col size="md-3">
-                {/* <BeastHarkonnen/> */}
+              <Col size="md-3"> 
+                {/* <BeastHarkonnen/>  */}
                 <SardaukarGrunt/>
               </Col>
             </Row>

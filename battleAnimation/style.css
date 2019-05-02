@@ -1,0 +1,33 @@
+/* Character animation */
+  
+  @keyframes attackRight {
+    0%   {left: 0px}
+    25%  {left: 8vw}
+    75%  {left: 2vw}
+    100% {left: 4vw}
+  }
+  
+  .animation-character {
+    animation-name: attackRight;
+    animation-duration: 0.5s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-direction: normal; 
+  }
+  
+  /* opponent animation */
+  
+  @keyframes attackLeft {
+    0%   {right: 0px}
+    25%  {right: 8vw}
+    75%  {right: 2vw}
+    100% {right: 4vw}
+  }
+  
+  .animation-opponent {
+    animation-name: attackLeft;
+    animation-duration: 0.5s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-direction: normal; 
+  }
