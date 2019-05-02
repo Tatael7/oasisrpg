@@ -10,11 +10,8 @@ import BattleMenu from "./components/BattleMenu";
 import API from "./utils/API";
 import { Container, Row, Col } from "./components/Grid";
 
-class App extends Component {
-  // state = {
-  //   recipes: [],
-  //   recipeSearch: ""
-  // };
+class Game extends Component {
+ 
 
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
@@ -46,19 +43,18 @@ class App extends Component {
               </Col>
               <Col size="md-6"></Col>
               <Col size="md-3">
-                {/* <BeastHarkonnen/> */}
-                <SardaukarGrunt/>
+                <SardaukarGrunt/>                
               </Col>
             </Row>
-            <Row>
+            
               <BattleMenu
                
               />
-            </Row>
+            
         </Container>
       </div>
     );
   }
 }
 
-export default App;
+export default Game;

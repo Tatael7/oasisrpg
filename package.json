@@ -21,16 +21,14 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cheeseburger-menu": "0.0.13",
+
     "eslint": "^5.16.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-<<<<<<< HEAD
-    "mdbootstrap": "^4.8.0",
-    "prop-types": "^15.7.2",
-    "react-dom": "^16.8.6",
-    "react-hamburger-menu": "^1.1.1"
-=======
+
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "react-hamburger-menu": "^1.1.1",
     "react-router-dom": "^5.0.0"
->>>>>>> 2ef9cda2159cef11148e532ba7fc58f9cbd06b6e
   }
 }

@@ -64,11 +64,15 @@ class App extends Component {
 =======
 import React from "react";
 
-class Game extends React.Component {
+
+class App extends React.Component {
     render() {
-        return <h1>This is a test</h1>
+        return (
+            
+            <h1>This is a test</h1>
+        )
     };
 >>>>>>> 2ef9cda2159cef11148e532ba7fc58f9cbd06b6e
 }
 
-export default Game;
+export default App;
