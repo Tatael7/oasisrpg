@@ -1,0 +1,32 @@
+.enemy-image {
+  padding: 20px 0 0;
+  width: 100%;
+  margin: 0;
+}
+
+.en-attacking {
+  transform: translateX(-50px);
+  transition: 500ms;
+}
+
+.en-specialing {
+  background: radial-gradient(circle, yellow 40%, transparent 80%);
+}
+
+.enemy-container {
+  width: 180px;
+  margin: 0 12px;
+}
+
+.enemy-container h3 {
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.enemy-health {
+  height: 12px;
+  background: red;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}

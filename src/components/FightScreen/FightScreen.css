@@ -1,0 +1,33 @@
+.fight-screen {
+  max-width: 100%;
+  min-height: 500px;
+  background:white;
+  border: 1px solid black;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.combat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.character {
+  margin: 80px 30px;
+}
+
+.health-bar {
+  width: 100px;
+  height: 12px;
+  border: 1px solid black;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 2;
+}
+
+@media (max-width: 670px) {
+  .character {
+    margin: 80px 10px;
+  }
+}

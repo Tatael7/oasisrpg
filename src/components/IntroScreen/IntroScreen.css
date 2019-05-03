@@ -1,0 +1,102 @@
+.logo{
+  max-width: 100%;
+}
+
+.intro-form > input {
+  margin: 0;
+  width: 0;
+  padding: 0;
+  height: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.intro-form  > div {
+  cursor: pointer;
+  border: 2px solid #444444;
+  box-shadow: 4px 4px black;
+  transition: 0.7s;
+}
+
+.intro-form  > input:checked + div {
+  border: 2px solid black;
+  background: #E8E8E8;
+  box-shadow: 1px 1px black;
+  transform: translate(3px, 3px);
+  transition: 0.7s;
+}
+
+.intro-selections {
+  margin: 20px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-selection {
+  margin: 16px 20px;
+}
+
+.intro-selection img {
+  height: 48px;
+  margin: 12px auto 4px;
+}
+
+.intro-selection h4 {
+  text-align: center;
+  font-size: 12px;
+  margin: 0;
+}
+
+.intro-img-box {
+  background: #CCCCCC;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+}
+
+.intro-img-box:hover {
+  background: #DDDDDD;
+  border: 2px solid black;
+}
+
+.intro-name > input {
+  font-size: 16px;
+}
+
+.intro-submit {
+  font-size: 16px;
+  padding: 8px;
+  margin: 20px;
+  background: lightblue;
+  border-radius: 8px;
+  box-shadow: 2px 2px black;
+}
+
+@media (max-width: 700px) {
+  .intro-selection {
+    margin: 12px;
+  }
+}
+
+@media (max-width: 565px) {
+  .intro-selection {
+    margin: 8px;
+  }
+
+  .intro-img-box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .intro-selection img {
+    height: 36px;
+    margin: 8px auto 2px;
+  }
+
+  .intro-submit {
+    font-size: 12px;
+    margin: 4px;
+  }
+}

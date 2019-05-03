@@ -1,0 +1,10 @@
+body {
+  font-family: Helvetica, sans-serif;
+  height: 100vh;
+  background: #111111
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

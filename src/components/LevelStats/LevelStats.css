@@ -1,0 +1,92 @@
+.action-text {
+  text-align: center;
+  font-size: 1em;
+  /* font-family: 'Courier New', Courier, monospace; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.enemy-text {
+  opacity: 1;
+  margin-right: -40px;
+  margin-top: -20px;
+  order: 1;
+  min-width: 40px;
+  max-width: 60px;
+}
+
+.player-text {
+  opacity: 1;
+  margin-left: -50px;
+  margin-top: -20px;
+  order: 0;
+  min-width: 40px;
+  max-width: 60px;
+}
+
+.damage-text {
+  color: red;
+}
+
+.heal-text {
+  color: green;
+}
+
+.hide {
+  transition: 1s;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: wiggle 1s infinite;
+  position: relative;
+}
+
+@keyframes wiggle {
+  0% {left: 0;}
+  25% {left: 10px;}
+  50% {left: -10px;}
+  100% {left: 0;}
+}
+
+.action-buttons {
+  margin-top: 200%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+}
+
+.action-button {
+  min-width: 80px;
+  max-width: 160px;
+  font-size: 1.1em;
+  margin: 6px;
+}
+
+.fake-button {
+  background: lightgrey;
+}
+
+.basic-button {
+  background: lightcoral;
+}
+
+.special-button {
+  background: lightblue;
+}
+
+.support-button {
+  background: lightgreen;
+}
+
+@media (max-width: 670px) {
+  .action-button {
+    font-size: 0.8em;
+    margin: 6px 0;
+  }
+
+  .action-text {
+    font-size: 0.9em;
+  }
+}

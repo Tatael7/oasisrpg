@@ -1,0 +1,27 @@
+.header {
+  font-size: 12px;
+  color: #EEEEEE;
+  text-align: center;
+  cursor: default;
+  margin: 0 auto;
+  width: 250px;
+  animation: colorChange 3s infinite linear;
+  animation-play-state: paused;
+}
+
+.header h1 {
+  font-size: 16px;
+}
+
+.header:hover {
+  animation-play-state: running;
+}
+
+@keyframes colorChange {
+  0% {color: #EEEEEE;}
+  20% {color: darkcyan}
+  40% {color: goldenrod;}
+  60% {color: crimson;}
+  80% {color: lightskyblue;}
+  100% {color: #EEEEEE;}
+}

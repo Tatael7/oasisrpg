@@ -1,0 +1,266 @@
+[
+  {
+    "name": "Sarkdaukar Grunt",
+    "img": "img/sardaukarGrunt.gif",
+    "moves": {
+      "attack": 5
+    },
+    "stats": {
+      "maxHealth": 50,
+      "strength": 1,
+      "defense": 1,
+      "magic": 1
+    }
+  },
+  {
+    "name": "Sardaukar Elite",
+    "img": "img/sardaukar.gif",
+    "moves": {
+      "attack": 6
+    },
+    "stats": {
+      "maxHealth": 60,
+      "strength": 1,
+      "defense": 1,
+      "magic": 1
+    }
+  },
+  {
+    "name": "Beast Harkonnen",
+    "img": "img/beastHarkonnen.gif",
+    "moves": {
+      "attack": 8,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 75,
+      "strength": 2,
+      "defense": 1,
+      "magic": 1
+    }
+  },
+  {
+    "name": "Pikachu",
+    "img": "img/pikachu.gif",
+    "moves": {
+      "attack": 10,
+      "thunderBolt": 10
+    },
+    "stats": {
+      "maxHealth": 80,
+      "strength": 1,
+      "defense": 1,
+      "magic": 3
+    }
+  },
+  {
+    "name": "Crabmeat",
+    "img": "img/crabmeat.gif",
+    "moves": {
+      "attack": 10,
+      "energyBall": 10
+    },
+    "stats": {
+      "maxHealth": 90,
+      "strength": 2,
+      "defense": 2,
+      "magic": 1
+    }
+  },
+  {
+    "name": "Para Troopa",
+    "img": "img/koopa_paratroopa.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 120,
+      "strength": 2,
+      "defense": 3,
+      "magic": 1
+    }
+  },
+  {
+    "name": "Grounder",
+    "img": "img/grounder.png",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 130,
+      "strength": 3,
+      "defense": 2,
+      "magic": 1
+    }
+  },
+  {
+    "name": "Poppy Bros Sr",
+    "img": "img/poppybrossr.gif",
+    "moves": {
+      "attack": 10,
+      "bomb-attack": 10
+    },
+    "stats": {
+      "maxHealth": 150,
+      "strength": 2,
+      "defense": 2,
+      "magic": 3
+    }
+  },
+  {
+    "name": "Squirtle",
+    "img": "img/squirtle.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 150,
+      "strength": 2,
+      "defense": 4,
+      "magic": 3
+    }
+  },
+  {
+    "name": "Haunter",
+    "img": "img/haunter.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 150,
+      "strength": 1,
+      "defense": 1,
+      "magic": 5
+    }
+  },
+  {
+    "name": "Blooper",
+    "img": "img/blooper.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 180,
+      "strength": 4,
+      "defense": 2,
+      "magic": 3
+    }
+  },
+  {
+    "name": "Demon",
+    "img": "img/doomdemon.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 200,
+      "strength": 5,
+      "defense": 4,
+      "magic": 3
+    }
+  },
+  {
+    "name": "Turtloids",
+    "img": "img/turtloids.png",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 200,
+      "strength": 4,
+      "defense": 6,
+      "magic": 4
+    }
+  },
+  {
+    "name": "Dragonite",
+    "img": "img/dragonite.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 250,
+      "strength": 6,
+      "defense": 4,
+      "magic": 6
+    }
+  },
+  {
+    "name": "Cacodemon",
+    "img": "img/cacodemon.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 280,
+      "strength": 6,
+      "defense": 6,
+      "magic": 6
+    }
+  },
+  {
+    "name": "Mewtwo",
+    "img": "img/mewtwo.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 300,
+      "strength": 7,
+      "defense": 7,
+      "magic": 7
+    }
+  },
+  {
+    "name": "Dedede",
+    "img": "img/dedede.gif",
+    "moves": {
+      "attack": 10,
+      "specialAttack": 10
+    },
+    "stats": {
+      "maxHealth": 350,
+      "strength": 7,
+      "defense": 5,
+      "magic": 8
+    }
+  },
+  {
+    "name": "Baron of Hell",
+    "img": "img/baronofhell.gif",
+    "moves": {
+      "attack": 10,
+      "plasma-ball": 10
+    },
+    "stats": {
+      "maxHealth": 400,
+      "strength": 8,
+      "defense": 8,
+      "magic": 8
+    }
+  },
+  {
+    "name": "winner",
+    "img": "img/aerodactyl.gif",
+    "moves": {
+      "attack": 1,
+      "plasma-ball": 1
+    },
+    "stats": {
+      "maxHealth": 1000000,
+      "strength": 1,
+      "defense": 1000,
+      "magic": 1
+    }
+  }
+]
