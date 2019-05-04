@@ -1,3 +1,4 @@
+
 .action-text {
   text-align: center;
   font-size: 1em;
@@ -49,6 +50,7 @@
 }
 
 .action-buttons {
+  float: left;
   margin-top: 200%;
   display: flex;
   justify-content: center;

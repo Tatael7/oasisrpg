@@ -31,7 +31,7 @@ export const initialState = {
     },
     {
       id: 1,
-      name: 'Magic Attack',
+      name: 'Pulse Attack',
       shortName: 'magic',
       type: 'special',
       amt: 10,

@@ -120,12 +120,12 @@ class LevelStats extends Component {
       </p> :  ''
     let enemyFallen = this.props.enemyHealth <= 0 ? 
       <p className='damage-text enemy-text'>
-        {this.props.enemyName} has fallen!
+        {this.props.enemyName} has been vanquished!
       </p> : ''
     return (
       <div className='level-stats'>
         {this.props.playerHealth <= 0 ?
-          <h2>You are dead</h2> 
+          <h2>Duncan has perished.</h2> 
           :
           this.props.enemyHealth > 0 ?
             <div className='action-buttons'>
@@ -146,11 +146,11 @@ class LevelStats extends Component {
                   <button 
                     key={move.id} 
                     className='action-button no-mana'
-                  >Out of Mana!
+                  >Out of Energy!
                   </button>
               ))}
             </div> : <div></div>
-        }
+        } 
         {this.props.isLevelingUp ?
           <LevelUpWrapper /> : null
         }

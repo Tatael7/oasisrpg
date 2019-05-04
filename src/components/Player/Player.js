@@ -6,11 +6,11 @@ const Player = ({name, img, imgName, level, health, mana, strength, defense, mag
   let healStatus = isHealing ? 'healing' : ''
   let specialStatus
   if (imgName === 'tanooki') specialStatus = isSpecialing ? 'specialing-tanooki' : ''
-  else if (imgName === 'fire') specialStatus = isSpecialing ? 'specialing-fire' : ''
-  else if (imgName === 'frog') specialStatus = isSpecialing ? 'specialing-frog' : ''
-  else if (imgName === 'hammer') specialStatus = isSpecialing ? 'specialing-hammer' : ''
-  else if (imgName === 'luigi') specialStatus = isSpecialing ? 'specialing-luigi' : ''
-  else if (imgName === 'shoe') specialStatus = isSpecialing ? 'specialing-shoe' : ''
+  // else if (imgName === 'fire') specialStatus = isSpecialing ? 'specialing-fire' : ''
+  // else if (imgName === 'frog') specialStatus = isSpecialing ? 'specialing-frog' : ''
+  // else if (imgName === 'hammer') specialStatus = isSpecialing ? 'specialing-hammer' : ''
+  // else if (imgName === 'luigi') specialStatus = isSpecialing ? 'specialing-luigi' : ''
+  // else if (imgName === 'shoe') specialStatus = isSpecialing ? 'specialing-shoe' : ''
   else specialStatus = isSpecialing ? 'specialing' : ''
   return(
     <div className='player-container'>
@@ -43,8 +43,8 @@ const Player = ({name, img, imgName, level, health, mana, strength, defense, mag
       <div className='stats'>
       <p className='stat'>Level: {level}</p>
         <p className='stat'>Strength: {strength}</p>
-        <p className='stat'>Defense: {defense}</p>
-        <p className='stat'>Magic: {magic}</p>
+        <p className='stat'>Sheilds: {defense}</p>
+        <p className='stat'>Pulse Energy: {magic}</p>
         <p className='stat'>Max Health: {maxHealth}</p>
         <p className='stat'>Max Mana: {maxMana}</p>
       </div>

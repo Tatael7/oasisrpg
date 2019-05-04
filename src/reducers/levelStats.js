@@ -4,7 +4,7 @@
 const initialState = {
   playerDmgTaken: 0,
   playerHealAmt: 0,
-  playerHitCrit: false,
+  playerHit   : false,
   enemyDmgTaken: 0,
   isLevelingUp: false,
   isPlaying: false,

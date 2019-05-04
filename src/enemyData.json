@@ -3,10 +3,10 @@
     "name": "Sarkdaukar Grunt",
     "img": "img/sardaukarGrunt.gif",
     "moves": {
-      "attack": 5
+      "attack": 10
     },
     "stats": {
-      "maxHealth": 50,
+      "maxHealth": 100,
       "strength": 1,
       "defense": 1,
       "magic": 1
@@ -29,11 +29,11 @@
     "name": "Beast Harkonnen",
     "img": "img/beastHarkonnen.gif",
     "moves": {
-      "attack": 8,
+      "attack": 10,
       "specialAttack": 10
     },
     "stats": {
-      "maxHealth": 75,
+      "maxHealth": 150,
       "strength": 2,
       "defense": 1,
       "magic": 1

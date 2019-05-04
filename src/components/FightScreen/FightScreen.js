@@ -3,10 +3,11 @@ import './FightScreen.css'
 import IntroScreenWrapper from '../../containers/IntroScreenWrapper'
 import PlayerWrapper from '../../containers/PlayerWrapper'
 import EnemyWrapper from '../../containers/EnemyWrapper'
-import LevelStatsWrapper from '../../containers/LevelStatsWrapper'
+import BattleMenuWrapper from '../../containers/BattleMenuWrapper'
 
 const FightScreen = ({isPlaying}) => {
   return (
+  
     <div className="fight-screen">
       {!isPlaying ?
         <IntroScreenWrapper /> :
@@ -15,7 +16,7 @@ const FightScreen = ({isPlaying}) => {
             <PlayerWrapper />
           </div>
           <div className="combat-buttons">
-            <LevelStatsWrapper />
+            <BattleMenuWrapper />
           </div>
           <div className="character">
             <EnemyWrapper />

@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
-import './IntroScreen.css'
+import React, { Component } from 'react';
+import './IntroScreen.css';
+import AnimationPage from '../AnimationPage';
+
+import { MDBAnimation } from "mdbreact";
 
 class IntroScreen extends Component {
 	pickCharacter(choice, result) {
@@ -42,51 +45,54 @@ class IntroScreen extends Component {
 
 	render() {
 		return (
-			<div>
-				<img src="../../img/logo.jpg" alt="logo.jpg" className="logo"/>
-			
-				<form
-					onSubmit={e => {
-						e.preventDefault()
-						this.props.introSubmit(
-							e.target.playerName.value,
-							this.pickCharacter(e.target.skills.value, 'stat'),
-							this.pickCharacter(e.target.skills.value, 'imgName'),
-							e.target.skills.value
-						)
-						this.props.checkMovePreReqs()
-					}}
-				>
-					<div className="intro-name">
-						<input
-							type="text"
-							name="playerName"
-							placeholder="Your Name"
-							onChange={e => this.handleChoice(e)}
-						/>
-					</div>
-					<div className="intro-selections">
-						<div className="intro-selection">
-							<label className="intro-form">
-								<input
-									type="radio"
-									name="skills"
-									value="fire"
-									onClick={e => this.handleChoice(e)}
-								/>
-								<div className="intro-img-box">
-									<h4>New Game</h4>
-								
-								</div>
-							</label>
-						</div>
+			<div><div>
 				
-					
-					</div>
-					<input className="intro-submit" type="submit" value="submit" />
-				</form>
+				<AnimationPage />
+				</div>
+  <img className="img-fluid logo" src="../../img/logo.jpg" alt=""/>
+
+		<form
+			onSubmit={e => {
+				e.preventDefault()
+				this.props.introSubmit(
+					e.target.playerName.value,
+					this.pickCharacter(e.target.skills.value, 'stat'),
+					this.pickCharacter(e.target.skills.value, 'imgName'),
+					e.target.skills.value
+				)
+				this.props.checkMovePreReqs()
+			}}
+		>
+			<div className="intro-name">
+				<input
+					type="text"
+					name="playerName"
+					placeholder="Your Name"
+					onChange={e => this.handleChoice(e)}
+				/>
 			</div>
-		)
+			<div className="intro-selections">
+				<div className="intro-selection">
+					<label className="intro-form">
+						<input
+							type="radio"
+							name="skills"
+							value="fire"
+							onClick={e => this.handleChoice(e)}
+						/>
+						<div className="intro-img-box">
+							<h4>New Game</h4>
+						
+						</div>
+					</label>
+				</div>
+		
+			
+			</div>
+			<input className="intro-submit" type="submit" value="submit" />
+		</form>
+	</div>
+)
 	}
 }
 
