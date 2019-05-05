@@ -1,14 +1,16 @@
 .fight-screen {
+  width: 100%;
   max-width: 100%;
-  min-height: 500px;
+  min-height: 500x;
   background:white;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 0 auto;
   text-align: center;
-
+  overflow: hidden;
 }
 
 .combat {
+  width:100%;
   display: flex;
   justify-content: space-between;
 }
@@ -20,14 +22,72 @@
 .health-bar {
   width: 100px;
   height: 12px;
-  border: 1px solid black;
+  border: 1.5px solid black;
   margin: 0 auto;
   padding: 0;
   z-index: 2;
 }
+/* First let's define some common styles */
 
-@media (max-width: 670px) {
-  .character {
-    margin: 80px 10px;
+html, body {
+  width : 100%;
+  height: 100%;
+}
+
+body {
+  /* border:0px solid black; */
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+p {
+  font   : 1em sans-serif;
+  margin : 0;
+  padding: .5em;
+}
+
+ul {
+  list-style: none;
+
+  font   : 1em monospace;
+  margin : 0;
+  padding: .5em;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  background: black;
+}
+
+li {
+  display: inline-block;
+  margin : 0;
+  padding: 0.5em;
+  background: white;
+}
+/* For portrait, we want the tool bar on top */
+
+@media screen and (orientation: portrait) {
+  #toolbar {
+    width: 100%;
+  }
+}
+
+/* For landscape, we want the tool bar stick on the left */
+
+@media screen and (orientation: landscape) {
+  #toolbar {
+    position: fixed;
+    width: 2.65em;
+    height: 100%;
+  }
+
+  p {
+    margin-left: 2em;
+  }
+
+  li + li {
+    margin-top: .5em;
   }
 }

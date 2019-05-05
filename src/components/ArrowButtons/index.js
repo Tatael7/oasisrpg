@@ -2,7 +2,7 @@ import React from "react";
 import ArrowLeft from "../ArrowLeft";
 import ArrowUp from "../ArrowUp";
 import ArrowRight from "../ArrowRight";
-
+import "./ArrowButtons.css"
 
 function ArrowButtons () {
     return(

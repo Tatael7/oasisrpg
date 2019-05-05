@@ -3,9 +3,9 @@
 }
 
 .player-image {
-  padding: 20px 0 0;
+  padding: 00px 0 0;
   width: 100%;
-  margin: 0;
+  margin-top:-20%;
   transition: 500ms;
 }
 
@@ -20,6 +20,7 @@
 }
 
 .fire-ball {
+  /* transform: rotateY(360deg); */
   width: 40px;
   height: 40px;
   border-radius: 20px;
@@ -64,13 +65,14 @@
 }
 
 .player-container {
-  width: 180px;
-  margin: 0 12px;
+  width: 50%;
+  margin: 0;
 }
 
 .player-container h3 {
-  text-align: center;
-  margin: 20px 0 10px;
+  text-align: right;
+  margin-left:100%;
+  margin-top:-50%;
 }
 
 .status-bar {
@@ -82,14 +84,14 @@
   background: red;
   padding: 0;
   margin: 0;
-  z-index: 1;
+  z-index: 12;
+  margin-left:120%;
 }
 
 .player-mana {
   height: 12px;
   background: blue;
   padding: 0;
-  margin: 0;
   z-index: 1;
 }
 
@@ -98,12 +100,13 @@
 }
 
 .stats {
-  width: 550%;
-  margin: 10px 130px 10px;
-  border: 1px solid black;
+  width: 250%;
+  margin: 0 130px 10px;
+  /* border: 1px solid black; */
   text-align: left;
   padding: 4px;
-  background: lightgrey;
+  /* background: lightgrey; */
+  z-index: 10;
 }
 
 .stat {
@@ -111,4 +114,5 @@
   padding: 0;
   font-size: 14px;
   font-family: "Roboto Mono" "Curior New" Curior monospace;
+  z-index: 10;
 }

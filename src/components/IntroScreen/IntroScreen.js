@@ -47,9 +47,8 @@ class IntroScreen extends Component {
 		return (
 			<div><div>
 				
-				<AnimationPage />
 				</div>
-  <img className="img-fluid logo" src="../../img/logo.jpg" alt=""/>
+  <img className="logo" src="../../img/logo.jpg" alt=""/>
 
 		<form
 			onSubmit={e => {

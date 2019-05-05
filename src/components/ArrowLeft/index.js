@@ -1,10 +1,10 @@
 import React from "react";
-import Picture from "./download.png";
+import Picture from "./arrowLeft.jpg";
 
 function ArrowLeft () {
     return (
-        <button id="arrowRight">
-            <img src={Picture} alt="arrow left" height="50" width="50"/>
+        <button id="arrowLeft">
+            <img src={Picture} alt="arrow left" height="40" width="50"/>
         </button>
     );
 }
