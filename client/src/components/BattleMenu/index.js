@@ -3,7 +3,7 @@ import ArrowLeft from "../ArrowLeft";
 import ArrowUp from "../ArrowUp";
 import ArrowRight from "../ArrowRight";
 import PlayerStats from "../PlayerStats";
-import { Container } from "../Grid";
+
 
 let duncanIdaho = {
     shields: 600
@@ -15,7 +15,7 @@ let enemy = {
 
 
 
-function BattleMenu () {
+function BattleMenu (props) {
    
 
     function normalAttack() {
@@ -35,24 +35,29 @@ function BattleMenu () {
     };
 
     function pulseAttack() {
-        let roll = Math.floor(Math.random() * 7);
+        let roll = Math.floor(Math.random() * 6) + 1;;
         console.log(`roll equals = ${roll}`);
         duncanIdaho.shields = duncanIdaho.shields - duncanIdaho.shields/10;
         console.log(` duncans new health ${duncanIdaho.shields}`);
-        if (roll === 1 || 4 ) {
-            let playerDamageDealt = Math.floor(enemy.shields/1);
+        if (roll === 1 || roll === 4) {
+            let playerDamageDealt = (80/100) * enemy.shields;
             console.log("damage dealt "  + playerDamageDealt);
             enemy.shields = enemy.shields - playerDamageDealt;
             console.log("enemy sheilds " + enemy.shields);
         }
-        else if (roll === 2 || 5) {
-            let playerDamageDealt = Math.floor(enemy.shields/8);
+        else if (roll === 2 || roll === 5) {
+            let playerDamageDealt = (40/100) * enemy.shields;
             console.log("damage dealt "+ playerDamageDealt);
             enemy.shields = enemy.shields - playerDamageDealt;
             console.log("enemy sheilds "+ enemy.shields);
         }
-        else if (roll === 3 || 6) {
+        else if (roll === 3 || roll === 6) {
+            let playerDamageDealt = 0;
             console.log("Attack missed");
+            console.log("damage dealt "+ playerDamageDealt);
+            enemy.shields = enemy.shields - playerDamageDealt;
+            console.log("enemy sheilds "+ enemy.shields);
+
         };
         enemyAttack(duncanIdaho.shields);
         deathCheckerPlayer();
@@ -103,11 +108,20 @@ function BattleMenu () {
                     <div className="col-sm-3">
                         <div className="container">
                             <div className="row">
-                                <ArrowUp/>
+                                <ArrowUp
+                                    {...props}
+                                    handleClickUp={props.handleClickUp}
+                                />
                             </div>
                             <div className="row">
-                                <ArrowLeft/>
-                                <ArrowRight/>
+                                <ArrowLeft
+                                    {...props}
+                                    handleClickLeft={props.handleClickLeft}
+                                />
+                                <ArrowRight
+                                    {...props}
+                                    handleClickRight={props.handleClickRight}
+                                />
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,9 @@
     "cheeseburger-menu": "0.0.13",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "payment": "^2.3.0",
     "react-hamburger-menu": "^1.1.1",
+    "react-payment": "^0.1.8",
     "react-router-dom": "^5.0.0"
   }
 }

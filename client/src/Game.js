@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import ArrowUp from "./components/ArrowUp"
-import ArrowLeft from "./components/ArrowLeft";
-import ArrowRight from "./components/ArrowRight";
 import BeastHarkonnen from "./components/BeastHarkonnen";
 import DuncanIdaho from "./components/DuncanIdaho";
 import SardaukarElite from "./components/SardaukarElite";
@@ -12,27 +9,8 @@ import { Container, Row, Col } from "./components/Grid";
 
 class Game extends Component {
  
-
-  handleInputChange = event => {
-    // Destructure the name and value properties off of event.target
-    // Update the appropriate state
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    event.preventDefault();
-    API.getRecipes(this.state.recipeSearch)
-      .then(res => this.setState({ recipes: res.data }))
-      .catch(err => console.log(err));
-  };
-
-  
-
   render() {
+    
     return (
       <div>
        
@@ -43,7 +21,7 @@ class Game extends Component {
               </Col>
               <Col size="md-6"></Col>
               <Col size="md-3">
-                <SardaukarGrunt/>                
+                <SardaukarElite/>                
               </Col>
             </Row>
             

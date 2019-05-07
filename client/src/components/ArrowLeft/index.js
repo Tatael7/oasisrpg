@@ -1,9 +1,12 @@
 import React from "react";
 import Picture from "./download.png";
 
-function ArrowLeft () {
+function ArrowLeft (props) {
     return (
-        <button id="arrowRight">
+        <button 
+            id="arrowRight"
+            onClick={props.handleClickLeft}
+        >
             <img src={Picture} alt="arrow left" height="50" width="50"/>
         </button>
     );

@@ -1,13 +1,15 @@
 import React from "react";
+import MicroTransactions from "./components/MicroTans";
 
 class Store extends React.Component {
     render() {
-        return <ol>
-                <li>stuff</li>
-                <li>stuff</li>
-                <li>more shit</li>
-                </ol>
-        
+        return (
+            <div>
+                <MicroTransactions/>
+                <button className="btn btn-danger">Submit</button>
+            </div>
+            
+        )
     };
 }
 

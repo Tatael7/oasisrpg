@@ -4,9 +4,24 @@ import BattleMenu from "../BattleMenu";
 
 function LevelOne () {
 
-    function TakeALeft() {
-        
-    }
+    function handleClickLeft() {
+        console.log("you decided to go left");
+        return (
+            <div>
+                <p>You turned left and ran into a wall dumbass</p>
+            </div>
+        );
+
+    };
+
+    function handleClickRight() {
+        console.log("this button is right");
+    };
+    
+    function handleClickUp () {
+        console.log("this button is up");
+    };
+    
 
     return (
         <div>
@@ -14,7 +29,11 @@ function LevelOne () {
                 <p>You enter an alley way, you can go left, forward, or right. Time to make a decision hero.</p>
             </div>
             <div>
-                <BattleMenu/>
+                <BattleMenu
+                    handleClickLeft={handleClickLeft}
+                    handleClickRight={handleClickRight}
+                    handleClickUp={handleClickUp}
+                />
             </div>
         </div>
        
