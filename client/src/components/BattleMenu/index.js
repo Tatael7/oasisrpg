@@ -15,7 +15,7 @@ let enemy = {
 
 
 
-function BattleMenu (props) {
+function BattleMenu(props)  {
    
 
     function normalAttack() {
@@ -25,10 +25,6 @@ function BattleMenu (props) {
         console.log(`this is the damage done by Duncan ${playerDamageDealt}`);
         enemy.shields = enemy.shields - playerDamageDealt;
         console.log(`Enemy shields = ${enemy.shields}`);
-        // let enemyDamageDealt = 50;
-        // console.log(`this is the damage dealt to Duncan ${enemyDamageDealt}`);
-        // duncanIdaho.shields = duncanIdaho.shields - enemyDamageDealt;
-        // //console.log(`Duncan idaho sheilds = ${duncanIdaho.shields}`);
         enemyAttack(duncanIdaho.shields);
         deathCheckerPlayer(duncanIdaho.shields);
         deathCheckerEnemy();

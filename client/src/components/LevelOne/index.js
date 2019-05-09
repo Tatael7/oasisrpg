@@ -1,38 +1,57 @@
 import React from "react";
 import BattleMenu from "../BattleMenu";
+import Story from "../Story";
 
 
-function LevelOne () {
+function LevelOne (props) {
 
-    function handleClickLeft() {
-        console.log("you decided to go left");
-        return (
-            <div>
-                <p>You turned left and ran into a wall dumbass</p>
-            </div>
-        );
+    // function handleClickLeft() {
+    //     console.log("you decided to go left");
+    //     this.setState({message : "You turned left!"})
+        
+    // };
 
-    };
-
-    function handleClickRight() {
-        console.log("this button is right");
-    };
+    // function handleClickRight() {
+    //     console.log("this button is right");
+    // };
     
-    function handleClickUp () {
-        console.log("this button is up");
-    };
-    
+    // function handleClickUp () {
+    //     console.log("this button is up");
+    // };
 
     return (
         <div>
             <div>
-                <p>You enter an alley way, you can go left, forward, or right. Time to make a decision hero.</p>
+                {/* Map 1
+                    start; go forward empty square go to square 2
+                            turn right nothing
+                            turn left 1 battle
+                    square 2; right is battle 
+                            forward is nothign 
+                            left is empty suare 3
+                    square 3; right is 2 battles
+                            left is 1 battle 
+                                  
+                */}
+
+            {/* Map 2; forward is battle
+                        right is turn around
+                        left is empty space 2
+                space 2; left is turnaround
+                        forward is empty space 3
+                space 3; 
+
+            
+            */}
+                
+                <Story/>
             </div>
             <div>
                 <BattleMenu
-                    handleClickLeft={handleClickLeft}
-                    handleClickRight={handleClickRight}
-                    handleClickUp={handleClickUp}
+                    {...props}
+                    handleClickLeft={props.handleClickLeft}
+                    // handleClickRight={handleClickRight}
+                    // handleClickUp={handleClickUp}
                 />
             </div>
         </div>

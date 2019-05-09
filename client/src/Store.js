@@ -6,7 +6,6 @@ class Store extends React.Component {
         return (
             <div>
                 <MicroTransactions/>
-                <button className="btn btn-danger">Submit</button>
             </div>
             
         )

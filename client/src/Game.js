@@ -4,7 +4,6 @@ import DuncanIdaho from "./components/DuncanIdaho";
 import SardaukarElite from "./components/SardaukarElite";
 import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
-import API from "./utils/API";
 import { Container, Row, Col } from "./components/Grid";
 
 class Game extends Component {
