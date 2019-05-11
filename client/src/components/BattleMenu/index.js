@@ -32,17 +32,14 @@ function BattleMenu(props)  {
                         <div className="container">
                             <div className="row">
                                 <ArrowUp
-                                    {...props}
                                     handleClickUp={props.handleClickUp}
                                 />
                             </div>
                             <div className="row">
                                 <ArrowLeft
-                                    {...props}
                                     handleClickLeft={props.handleClickLeft}
                                 />
                                 <ArrowRight
-                                    {...props}
                                     handleClickRight={props.handleClickRight}
                                 />
                             </div>

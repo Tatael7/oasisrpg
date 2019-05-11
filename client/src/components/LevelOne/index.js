@@ -5,20 +5,6 @@ import Story from "../Story";
 
 function LevelOne (props) {
 
-    // function handleClickLeft() {
-    //     console.log("you decided to go left");
-    //     this.setState({message : "You turned left!"})
-        
-    // };
-
-    // function handleClickRight() {
-    //     console.log("this button is right");
-    // };
-    
-    // function handleClickUp () {
-    //     console.log("this button is up");
-    // };
-
     return (
         <div>
             <div>
@@ -44,14 +30,15 @@ function LevelOne (props) {
             
             */}
                 
-                <Story/>
+                <Story
+                    story={props.story}
+                />
             </div>
             <div>
                 <BattleMenu
-                    {...props}
                     handleClickLeft={props.handleClickLeft}
-                    // handleClickRight={handleClickRight}
-                    // handleClickUp={handleClickUp}
+                    handleClickRight={props.handleClickRight}
+                    handleClickUp={props.handleClickUp}
                 />
             </div>
         </div>

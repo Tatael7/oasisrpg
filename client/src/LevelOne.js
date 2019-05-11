@@ -1,24 +1,43 @@
 import React from "react";
 import LevelOne from "./components/LevelOne";
 
-class LevelTest extends React.Component {
+class Level extends React.Component {
     
     state = {
-        message: "hello world"
+        message: [
+            "zero",
+            "first",
+            "second",
+            "third",
+            "forth",
+            "fifth"
+        ]
     };
 
-    handleClickLeft() {
+    handleClickLeft = () => {
         console.log("you decided to go left");
-        this.setState({message : "You turned left!"});
-        
+        console.log(this.state);
+        console.log(this.state.message);
+        console.log(this.state.message[1]);
+        let newStoryLine = this.state.message[1];
+        console.log(newStoryLine)
+        this.setState({message: newStoryLine});
     };
 
-    handleClickRight() {
+    handleClickRight = () => {
         console.log("this button is right");
+        console.log(this.state.message[2]);
+        let newStoryLine = this.state.message[2];
+        console.log(newStoryLine)
+        this.setState({message: newStoryLine});
+
     };
     
-    handleClickUp() {
+    handleClickUp = () =>  {
         console.log("this button is up");
+        let newStoryLine = this.state.message[3];
+        console.log(newStoryLine)
+        this.setState({message: newStoryLine});
     };
 
 
@@ -28,15 +47,15 @@ class LevelTest extends React.Component {
         return (
             <div>
                 <LevelOne
-                    // handleClickLeft = {this.handleClickLeft}
+                    story={this.state.message}
+                    handleClickLeft={this.handleClickLeft}
+                    handleClickRight={this.handleClickRight}
+                    handleClickUp={this.handleClickUp}
                 />
-                <button 
-                    onChange={this.handleClickLeft}
-                >Test</button>
                 <p>{this.state.message}</p>
             </div>
         )
     };
 }
 
-export default LevelTest;
+export default Level;
