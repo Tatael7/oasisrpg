@@ -1,0 +1,55 @@
+.ArrowContainer{
+    align-content: center;
+}
+
+.ArrowUp{
+    margin-right:-125%;
+}
+
+.BattleDiv{
+  max-height: 50%;
+}
+.DuncanDiv{
+  float: left;
+}
+
+.EnemyDiv{
+    float:right;
+}
+
+.BattleMenuContainer{
+    position: fixed;
+    width: 100%;
+    bottom: 10px;
+    max-height: 22%;
+}
+
+.DuncanBattleMenuHeader{
+    font-size: 3;
+}
+
+
+.attacking {
+    transform: translateX(290%);
+    transition: 500ms;
+  }
+
+/* 
+  .notAttacking {
+      transform: translateX(0);
+      transition: 500ms;
+  } */
+
+
+/*   
+.enemyAttacking {
+    transform: translateX(-290%);
+    transition: 500ms;
+  } */
+
+
+/* 
+  .enemyNotAttacking {
+      transform: translateX(0);
+      transition: 500ms;
+  } */

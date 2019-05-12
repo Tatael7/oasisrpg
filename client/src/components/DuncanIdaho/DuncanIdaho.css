@@ -1,0 +1,40 @@
+  /* .img-container {
+ width: 100%;
+}
+
+.player-image {
+  padding: 00px 0 0;
+  width: 100%;
+  margin-top:-20%;
+  transition: 500ms;
+} */
+
+/* 
+.DuncanDiv{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 1s;
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+.DuncanDiv1{
+  width: 100px;
+  height: 100px;
+  position: relative;
+
+} */
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0%   { left:0px; top:0px;}
+  50%  {left:250%; top:0px;}
+  100% { left:0px; top:0px;}
+}
+
+@keyframes example {
+  0%   { left:0px; top:0px;}
+  50%  { left:250%; top:0px;}
+  100% { left:0px; top:0px;}
+}
