@@ -1,7 +1,8 @@
 import React from "react";
 import LevelOne from "./components/LevelOne";
+import { Redirect } from "react-router-dom";
 
-class LevelOneOne extends React.Component {
+class LevelTwo extends React.Component {
     
     state = {
         message: `You start your adventrure in the citadel, you come into a street, you can
@@ -56,4 +57,4 @@ class LevelOneOne extends React.Component {
     };
 }
 
-export default LevelOneOne;
+export default LevelTwo;

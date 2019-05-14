@@ -4,7 +4,8 @@ import {Route, Link, BrowserRouter as Router} from "react-router-dom";
 import App from "./App";
 import Game from "./Game";
 import Store from "./Store";
-import Level from "./LevelOne"
+import LevelOneOne from "./LevelOne";
+import Game2 from "./Game2";
 
 const routing = (
     <Router>
@@ -20,13 +21,17 @@ const routing = (
                     <Link to="/store">Store</Link>
                 </li>
                 <li>
-                    <Link to="/level">Level</Link>
+                    <Link to="/leveloneone">Level</Link>
+                </li>
+                <li>
+                    <Link to="/game2">Game2</Link>
                 </li>
             </ul>
             <Route exact path="/" component={App} />
             <Route exact path="/game" component={Game} />
             <Route exact path="/store" component={Store}/>
-            <Route exact path="/level" component={Level}/>
+            <Route exact path="/leveloneone" component={LevelOneOne}/>
+            <Route exact path="/game2" component={Game2}/>
         </div>
     </Router>
 )
