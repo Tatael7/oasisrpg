@@ -20,9 +20,11 @@
   },
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "animejs": "^3.0.1",
     "axios": "^0.18.0",
     "card-validator": "^6.1.0",
     "cheeseburger-menu": "0.0.13",
+    "dynamic-class-list": "^1.0.82",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "payment": "^2.3.0",

@@ -6,12 +6,13 @@ class LevelOneOne extends React.Component {
     state = {
         message: `You start your adventrure in the citadel, you come into a street, you can
         continue forward, go left or right.`,
-        second: `You decide to turn left and you run into a Sardukar guard.`,
-        third: `You diced to walk forward and come to a for in the road.`,
-        forth: `You decide to turn to the right and end up walking into an alleyway, you 
+        second: `You decided to turn left and you run into a Sardukar guard.`,
+        third: `You dediced to walk forward and come to a for in the road.`,
+        forth: `You decided to turn to the right and end up walking into an alleyway, you 
         find an extra battery pack for your shields system but a you're installing it one Sadukar 
-        Grunt and one Eleite corner you, it's time to fight`
+        Grunt and one Elite corner you, it's time to fight`
     };
+
 
     handleClickLeft = () => {
         console.log("you decided to go left");
