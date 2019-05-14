@@ -51,7 +51,6 @@ class Level extends React.Component {
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
                 />
-                <p>{this.state.message}</p>
             </div>
         )
     };

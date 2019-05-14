@@ -91,6 +91,7 @@ class Game extends Component {
     let vida = this.state.enemy.shields;
     if(vida === 0 || vida < 0) {
       console.log("enemy is dead");
+      alert("Enemy is Dead");
     }
   }
 
@@ -105,7 +106,7 @@ class Game extends Component {
               </Col>
               <Col size="md-6"></Col>
               <Col size="md-3">
-                <SardaukarElite/>                
+                <SardaukarGrunt/>                
               </Col>
             </Row>
             

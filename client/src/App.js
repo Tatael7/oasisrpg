@@ -6,7 +6,7 @@ class App extends React.Component {
         return (
             <div>
                 <h1>This is a test</h1>
-                <button><a href="/leveltest">New Game</a></button>
+                <button><a href="/level">New Game</a></button>
             </div>
             
         )

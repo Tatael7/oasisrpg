@@ -26,7 +26,7 @@ const routing = (
             <Route exact path="/" component={App} />
             <Route exact path="/game" component={Game} />
             <Route exact path="/store" component={Store}/>
-            <Route exact path="/leveltest" component={Level}/>
+            <Route exact path="/level" component={Level}/>
         </div>
     </Router>
 )
