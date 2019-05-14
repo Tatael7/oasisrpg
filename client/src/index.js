@@ -6,22 +6,25 @@ import Game from "./Game";
 import Store from "./Store";
 import LevelOneOne from "./LevelOne";
 import Game2 from "./Game2";
+import MenuCurtain from "./components/MenuCurtain";
+
+// class App extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <MenuCurtain/>
+//             </div>
+//         )
+//     };
+// }
 
 const routing = (
     <Router>
         <div>
+        <MenuCurtain/>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
                     <Link to="/game">Game</Link>
-                </li>
-                <li>
-                    <Link to="/store">Store</Link>
-                </li>
-                <li>
-                    <Link to="/leveloneone">Level</Link>
                 </li>
                 <li>
                     <Link to="/game2">Game2</Link>
