@@ -20,7 +20,7 @@ const routing = (
                     <Link to="/store">Store</Link>
                 </li>
                 <li>
-                    <Link to="/level">Level</Link>
+                    <Link to="/leveltest">Level</Link>
                 </li>
             </ul>
             <Route exact path="/" component={App} />
