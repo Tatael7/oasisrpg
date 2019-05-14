@@ -5,10 +5,8 @@ import SardaukarElite from "./components/SardaukarElite";
 import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
-import { getClassNames, classList } from 'dynamic-class-list';
-import "./stylesGame.css"
 
-class Game extends Component {
+class Game2 extends Component {
 
   state = {
     player: {
@@ -17,34 +15,16 @@ class Game extends Component {
     },
     enemy: {
       shields: 500
-    },
-    isAttacking: false,
-
-//enemy on screen status
-
-    // gruntActive: false,
-
-    // eliteActive: false,
-
-    // beastActive: false
-
+    }
   };
-  normalAttack = () => {
 
-    // this.setState({DuncanIdaho: {attackStatus: this.state.DuncanIdaho.attackStatus}});
-    // let attackStatus =this.state.DuncanIdaho.attackStatus={ attacking};
-    
+  normalAttack = () => {
+    this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("normal attack");
     console.log(this.state.enemy.shields);
     let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
-    this.setState({
-      enemy: {shields: newEnemyShields},
-      isAttacking:true,
-    } 
-    ); 
-    
-    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    this.setState({enemy: {shields: newEnemyShields}});
     this.enemyAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
@@ -60,9 +40,7 @@ class Game extends Component {
   };
   
   pulseAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields},
-    isAttacking:true,
-    });
+    this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("pulse attack");
     console.log(this.state.enemy.shields);
     let roll = Math.floor(Math.random() * 6) + 1;
@@ -88,7 +66,6 @@ class Game extends Component {
       console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
-    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
@@ -124,19 +101,14 @@ class Game extends Component {
        
         <Container>
           <Row>
-              <Col size="md-3" >
-                <DuncanIdaho 
-              isAttacking={this.state.isAttacking}            
-                />
-        
-              </Col>
-              <Col size="md-6"></Col>
               <Col size="md-3">
-
-                <SardaukarElite
-                isAttacking={this.state.isAttacking} 
-                />                
-
+                <DuncanIdaho/>
+              </Col>
+              <Col size="md-6">
+                <SardaukarGrunt/>
+              </Col>
+              <Col size="md-3">
+                <SardaukarElite/>
               </Col>
             </Row>
             
@@ -156,4 +128,4 @@ class Game extends Component {
   }
 }
 
-export default Game;
+export default Game2;
