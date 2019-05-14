@@ -1,5 +1,5 @@
 import React from "react";
-import Picture from "./arrowRight.png";
+import Picture from "./arrowRight.jpg";
 
 function ArrowRight (props) {
     return (
@@ -7,7 +7,7 @@ function ArrowRight (props) {
             id="arrowRight"
             onClick={props.handleClickRight}
         >
-            <img src={Picture} alt="arrow right" height="50" width="50"/>
+            <img src={Picture} alt="arrow right" height="50"/>
         </button>
     );
 }

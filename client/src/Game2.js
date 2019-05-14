@@ -6,7 +6,7 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 
-class Game extends Component {
+class Game2 extends Component {
 
   state = {
     player: {
@@ -104,9 +104,11 @@ class Game extends Component {
               <Col size="md-3">
                 <DuncanIdaho/>
               </Col>
-              <Col size="md-6"></Col>
+              <Col size="md-6">
+                <SardaukarGrunt/>
+              </Col>
               <Col size="md-3">
-                <SardaukarGrunt/>                
+                <SardaukarElite/>
               </Col>
             </Row>
             
@@ -126,4 +128,4 @@ class Game extends Component {
   }
 }
 
-export default Game;
+export default Game2;
