@@ -5,7 +5,7 @@ import SardaukarElite from "./components/SardaukarElite";
 import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
-
+import BattleBackground from "../src/components/Story/background_battleScreen.jpg";
 class Game6 extends Component {
 
   state = {
@@ -15,32 +15,49 @@ class Game6 extends Component {
     },
     enemy: {
       shields: 500
-    }
-  };
+    },
+    isAttacking: false,
+    isPulsing: false,
 
+    DuncanIsAttacking:false,
+
+    EnemyIsAttacking: false,
+
+    EnemyIsPulsing: false,
+       
+    storyHidden: false,
+
+    beastIsPulsing: true,
+
+    beastRotating: true
+
+  };
   normalAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields}});
+
     console.log("normal attack");
     console.log(this.state.enemy.shields);
     let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
-    this.setState({enemy: {shields: newEnemyShields}});
+    this.setState({
+      enemy: {shields: newEnemyShields},
+      isAttacking:true,
+    }
+    );
+ 
+    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
     this.enemyAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
   }
  
   enemyAttack = () => {
-    this.setState({player: {shields: this.state.player.shields}});
-    console.log(`The enemy attacks`);
-    console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 50;
-    console.log(`player health ${newPlayerShields}`);
-    this.setState({player: {shields: newPlayerShields}});
-  };
-  
-  pulseAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields}});
+    this.setState({enemy: {shields: this.state.enemy.shields},
+      isAttacking:true,
+      isPulsing:true,
+    });
+    setTimeout(() =>{this.setState({isAttacking:false,
+    isPulsing:false
+    })}, 900);
     console.log("pulse attack");
     console.log(this.state.enemy.shields);
     let roll = Math.floor(Math.random() * 6) + 1;
@@ -69,16 +86,14 @@ class Game6 extends Component {
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
-    
-
   }
 
   enemyPulseAttack = () => {
-    this.setState({player: {shields: this.state.player.shields}});
+    setTimeout(()=>{this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = this.state.player.shields/10;
     let damageDealt = 50 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
-    this.setState({player: {shields: newPlayerShields}});
+    this.setState({player: {shields: newPlayerShields}})}, 1000);
   }
 
   deathCheckPlayer = () => {
@@ -93,19 +108,26 @@ class Game6 extends Component {
       console.log("enemy is dead");
       alert("Enemy is Dead");
     }
+  
   }
 
   render() {
     return (
       <div>
        
-        <Container>
+        <Container
+        style={{zIndex:-1,
+        // marginTop:-2000
+        }}
+        >
           <Row>
               <Col size="md-3">
                 <DuncanIdaho/>
               </Col>
               <Col size="md-9">
-                <BeastHarkonnen/>
+                <BeastHarkonnen
+                beastRotating={this.state.beastRotating}
+                />
               </Col>
             </Row>
             
@@ -120,6 +142,7 @@ class Game6 extends Component {
               />
             
         </Container>
+       <img src= {BattleBackground}/>
       </div>
     );
   }
