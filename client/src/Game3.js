@@ -5,16 +5,25 @@ import SardaukarElite from "./components/SardaukarElite";
 import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
+import Modal from "./components/Modal/Modal";
+
 
 class Game3 extends Component {
 
-  state = {
-    player: {
-      shields: 600
-      
-    },
-    enemy: {
-      shields: 500
+  constructor() {
+    super();
+    this.state = {
+      player: {
+        shields: 600
+        
+      },
+      enemy: {
+        shields: 650
+      },
+      isAttacking: false,
+      isShowing: false,
+      message: "",
+      link: ""
     }
   };
 
@@ -88,17 +97,26 @@ class Game3 extends Component {
     }
   };
   deathCheckEnemy = () => {
-    let vida = this.state.enemy.shields;
-    if(vida === 0 || vida < 0) {
-      console.log("enemy is dead");
-      alert("Enemy is Dead");
+    if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
+      console.log(`enemy is dead`);
+      let newMessage = "Enemy is dead";
+      this.setState({isShowing: true});
+      this.setState({message: newMessage});
+      this.setState({link: "/game4"});
+
     }
-  }
+  };
 
   render() {
     return (
       <div>
-       
+        <Modal
+          className="modal"
+          show={this.state.isShowing}
+          close={this.closeModalHandler}
+          link={this.state.link}>  
+            {this.state.message}             
+        </Modal>
         <Container>
           <Row>
               <Col size="md-3">
@@ -121,6 +139,7 @@ class Game3 extends Component {
               />
             
         </Container>
+        
       </div>
     );
   }

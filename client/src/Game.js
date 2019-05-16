@@ -5,33 +5,30 @@ import SardaukarElite from "./components/SardaukarElite";
 import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
+import Modal from "./components/Modal/Modal";
 import "./stylesGame.css";
+
 
 class Game extends Component {
 
-  state = {
-    player: {
-      shields: 600
-      
-    },
-    enemy: {
-      shields: 500
-    },
-    isAttacking: false,
-
-//enemy on screen status
-
-    // gruntActive: false,
-
-    // eliteActive: false,
-
-    // beastActive: false
-
+  constructor() {
+    super();
+    this.state = {
+      player: {
+        shields: 600
+        
+      },
+      enemy: {
+        shields: 500
+      },
+      isAttacking: false,
+      isShowing: false,
+      message: "",
+      link: ""
+    }
   };
-  normalAttack = () => {
 
-    // this.setState({DuncanIdaho: {attackStatus: this.state.DuncanIdaho.attackStatus}});
-    // let attackStatus =this.state.DuncanIdaho.attackStatus={ attacking};
+  normalAttack = () => {
     
     console.log("normal attack");
     console.log(this.state.enemy.shields);
@@ -87,7 +84,6 @@ class Game extends Component {
       console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
-    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
@@ -110,17 +106,26 @@ class Game extends Component {
     }
   };
   deathCheckEnemy = () => {
-    let vida = this.state.enemy.shields;
-    if(vida === 0 || vida < 0) {
-      console.log("enemy is dead");
-      alert("Enemy is Dead");
+    if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
+      console.log(`enemy is dead`);
+      let newMessage = "Enemy is dead";
+      this.setState({isShowing: true});
+      this.setState({message: newMessage});
+      this.setState({link: "/leveloneone"});
+
     }
-  }
+  };
 
   render() {
     return (
       <div>
-       
+        <Modal
+          className="modal"
+          show={this.state.isShowing}
+          close={this.closeModalHandler}
+          link={this.state.link}>  
+            {this.state.message}             
+        </Modal>
         <Container>
           <Row>
               <Col size="md-3" >
@@ -132,7 +137,7 @@ class Game extends Component {
               <Col size="md-6"></Col>
               <Col size="md-3">
 
-                <SardaukarElite
+                <SardaukarGrunt
                 isAttacking={this.state.isAttacking} 
                 />                
 
@@ -141,19 +146,16 @@ class Game extends Component {
             
               <BattleMenu
                 playerShields = {this.state.player.shields}
-                // playerAttack = {this.state.player.attack}
                 normalAttack = {this.normalAttack}
                 pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}
-                // enemyAttack = {this.state.enemy.attack}
-               
+                enemyShields = {this.state.enemy.shields}               
               />
             
         </Container>
+        
       </div>
     );
   }
 }
 
 export default Game;
-
