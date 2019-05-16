@@ -11,6 +11,8 @@ import LevelOneThree from "./LevelThree";
 import Game3 from "./Game3";
 import Game4 from "./Game4";
 import Game5 from "./Game5";
+import LevelFour from "./LevelFour";
+import Game6 from "./Game6";
 import MenuCurtain from "./components/MenuCurtain";
 
 
@@ -50,6 +52,12 @@ const routing = (
                 <li>
                     <Link to="/game5">Game5</Link>
                 </li>
+                <li>
+                    <Link to="/levelonefour">Level4</Link>
+                </li>
+                <li>
+                    <Link to="game6">Game6</Link>
+                </li>
             </ul>
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>
@@ -61,6 +69,8 @@ const routing = (
             <Route exact path="/game3" component={Game3}/>
             <Route exact path="/game4" component={Game4}/>
             <Route exact path="/game5" component={Game5}/>
+            <Route exact path="/levelonefour" component={LevelFour}/>
+            <Route exact path="/game6" component={Game6}/>
         </div>
     </Router>
 )
