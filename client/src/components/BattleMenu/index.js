@@ -52,6 +52,9 @@ function BattleMenu(props)  {
                         </ul>
                     </div>
                 </div>
+                    <img src="./background_battleScreen.jpg"></img>
+
+
             </div>
         </div>
     );

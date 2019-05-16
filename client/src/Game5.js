@@ -5,24 +5,16 @@ import SardaukarElite from "./components/SardaukarElite";
 import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
-import Modal from "./components/Modal/Modal";
 
 class Game5 extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      player: {
-        shields: 600
-        
-      },
-      enemy: {
-        shields: 500
-      },
-      isAttacking: false,
-      isShowing: false,
-      message: "",
-      link: ""
+  state = {
+    player: {
+      shields: 600
+      
+    },
+    enemy: {
+      shields: 500
     }
   };
 
@@ -96,27 +88,17 @@ class Game5 extends Component {
     }
   };
   deathCheckEnemy = () => {
-    if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
-      console.log(`enemy is dead`);
-      let newMessage = "Enemy is dead";
-      this.setState({isShowing: true});
-      this.setState({message: newMessage});
-      this.setState({link: "/levelonefour"});
-
+    let vida = this.state.enemy.shields;
+    if(vida === 0 || vida < 0) {
+      console.log("enemy is dead");
+      alert("Enemy is Dead");
     }
-  };
+  }
 
   render() {
     return (
       <div>
        
-       <Modal
-          className="modal"
-          show={this.state.isShowing}
-          close={this.closeModalHandler}
-          link={this.state.link}>  
-            {this.state.message}             
-        </Modal>
         <Container>
           <Row>
               <Col size="md-3">

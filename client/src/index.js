@@ -18,9 +18,13 @@ import MenuCurtain from "./components/MenuCurtain";
 
 
 const routing = (
-    <Router>
+    <Router
+    style={{zIndex:1}}
+    >
         <div>
-        <MenuCurtain/>
+        <MenuCurtain
+            style={{zIndex:200}}
+            />
         <ul>
                 <li>
                     <Link to="/">Home</Link>

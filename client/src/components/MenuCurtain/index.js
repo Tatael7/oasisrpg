@@ -10,9 +10,10 @@ class MenuCurtain extends React.Component {
 
     render () {
         return (
-            <div id="myNav"
+            <div id="myNav" 
                 className="overlay" 
-                style={this.state.open ? {width: "50%"}:  {width: "45px"}}
+                style={this.state.open ? {width: "50%"}:  {width: "45px" }}
+                
             >
                 
                 {this.state.open ? 
