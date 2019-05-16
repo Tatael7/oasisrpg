@@ -61,13 +61,6 @@ class LevelOneThree extends React.Component {
         return (
             <div>
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
-
-                <LevelOne
-                    story={this.state.message}
-                    handleClickLeft={this.handleClickLeft}
-                    handleClickRight={this.handleClickRight}
-                    handleClickUp={this.handleClickUp}
-                />
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
@@ -77,6 +70,13 @@ class LevelOneThree extends React.Component {
                     >
                         {this.state.message}                
                 </Modal>
+                <LevelOne
+                    story={this.state.message}
+                    handleClickLeft={this.handleClickLeft}
+                    handleClickRight={this.handleClickRight}
+                    handleClickUp={this.handleClickUp}
+                />
+                
             </div>
         )
     };

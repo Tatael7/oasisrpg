@@ -15,47 +15,32 @@ class Game5 extends Component {
     },
     enemy: {
       shields: 500
-    },
-    isAttacking: false,
-    isPulsing: false,
-
-    DuncanIsAttacking:false,
-
-    EnemyIsAttacking: false,
-
-    EnemyIsPulsing: false,
-       
-    storyHidden: false,
-
-    beastIsPulsing: true,
-
+    }
   };
-  normalAttack = () => {
 
+  normalAttack = () => {
+    this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("normal attack");
     console.log(this.state.enemy.shields);
     let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
-    this.setState({
-      enemy: {shields: newEnemyShields},
-      isAttacking:true,
-    }
-    );
- 
-    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    this.setState({enemy: {shields: newEnemyShields}});
     this.enemyAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
   }
  
   enemyAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields},
-      isAttacking:true,
-      isPulsing:true,
-    });
-    setTimeout(() =>{this.setState({isAttacking:false,
-    isPulsing:false
-    })}, 900);
+    this.setState({player: {shields: this.state.player.shields}});
+    console.log(`The enemy attacks`);
+    console.log(this.state.player.shields);
+    let newPlayerShields = this.state.player.shields - 50;
+    console.log(`player health ${newPlayerShields}`);
+    this.setState({player: {shields: newPlayerShields}});
+  };
+  
+  pulseAttack = () => {
+    this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("pulse attack");
     console.log(this.state.enemy.shields);
     let roll = Math.floor(Math.random() * 6) + 1;
@@ -84,14 +69,16 @@ class Game5 extends Component {
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
+    
+
   }
 
   enemyPulseAttack = () => {
-    setTimeout(()=>{this.setState({player: {shields: this.state.player.shields}});
+    this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = this.state.player.shields/10;
     let damageDealt = 50 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
-    this.setState({player: {shields: newPlayerShields}})}, 1000);
+    this.setState({player: {shields: newPlayerShields}});
   }
 
   deathCheckPlayer = () => {
