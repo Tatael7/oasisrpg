@@ -13,11 +13,11 @@ class Game6 extends Component {
     super();
     this.state = {
       player: {
-        shields: 600
+        shields: 1100
         
       },
       enemy: {
-        shields: 1000
+        shields: 3000
       },
       isAttacking: false,
       isShowing: false,
@@ -30,7 +30,7 @@ class Game6 extends Component {
     this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("normal attack");
     console.log(this.state.enemy.shields);
-    let newEnemyShields = this.state.enemy.shields - 100;
+    let newEnemyShields = this.state.enemy.shields - 300;
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({enemy: {shields: newEnemyShields}});
     this.enemyAttack();
@@ -40,17 +40,23 @@ class Game6 extends Component {
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
-    console.log(`The enemy attacks`);
-    console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 50;
-    console.log(`player health ${newPlayerShields}`);
-    this.setState({player: {shields: newPlayerShields}});
+    // let newPlayerShields = this.state.player.shields - 50;
+    // console.log(`player health ${newPlayerShields}`);
+    // this.setState({player: {shields: newPlayerShields}});
+    let roll = Math.floor(Math.random() * 3) + 1;
+    console.log(`this is beast's roll ${roll}`);
+    if ( roll === 2 ) {
+      let newPlayerShields = this.state.player.shields - this.state.player.shields;
+      this.setState({player: {shields: newPlayerShields}});
+    }
+    else {
+      let newPlayerShields = this.state.player.shields - 200;
+      this.setState({player: {shields: newPlayerShields}});
+    }
   };
   
   pulseAttack = () => {
     this.setState({enemy: {shields: this.state.enemy.shields}});
-    console.log("pulse attack");
-    console.log(this.state.enemy.shields);
     let roll = Math.floor(Math.random() * 6) + 1;
     console.log(`this is the roll ${roll}`);
     if (roll === 1 || roll === 4) {
