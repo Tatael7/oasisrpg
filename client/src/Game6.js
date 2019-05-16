@@ -5,16 +5,24 @@ import SardaukarElite from "./components/SardaukarElite";
 import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
+import Modal from "./components/Modal/Modal";
 
 class Game6 extends Component {
 
-  state = {
-    player: {
-      shields: 600
-      
-    },
-    enemy: {
-      shields: 500
+  constructor() {
+    super();
+    this.state = {
+      player: {
+        shields: 600
+        
+      },
+      enemy: {
+        shields: 1000
+      },
+      isAttacking: false,
+      isShowing: false,
+      message: "",
+      link: ""
     }
   };
 
@@ -88,12 +96,16 @@ class Game6 extends Component {
     }
   };
   deathCheckEnemy = () => {
-    let vida = this.state.enemy.shields;
-    if(vida === 0 || vida < 0) {
-      console.log("enemy is dead");
-      alert("Enemy is Dead");
+    if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
+      console.log(`enemy is dead`);
+      alert("Beast is dead");
+      // let newMessage = "Enemy is dead";
+      // this.setState({isShowing: true});
+      // this.setState({message: newMessage});
+      // this.setState({link: "/leveloneone"});
+
     }
-  }
+  };
 
   render() {
     return (
@@ -111,15 +123,13 @@ class Game6 extends Component {
             
               <BattleMenu
                 playerShields = {this.state.player.shields}
-                // playerAttack = {this.state.player.attack}
                 normalAttack = {this.normalAttack}
                 pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}
-                // enemyAttack = {this.state.enemy.attack}
-               
+                enemyShields = {this.state.enemy.shields}               
               />
             
         </Container>
+        
       </div>
     );
   }
