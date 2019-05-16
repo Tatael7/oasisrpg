@@ -2,15 +2,16 @@ import React from "react";
 import LevelOne from "./components/LevelOne";
 import Modal from "./components/Modal/Modal";
 
-class LevelOneOne extends React.Component {
+class LevelOneThree extends React.Component {
 
     constructor() {
         super();
 
         this.state = {
             isShowing : false,
-            message: `You start your adventrure in the citadel, you come into a street, you can
-                continue forward, go left or right.`,
+            message: `You've defeated the Elite and Grunt team and you take 
+            the Elite's key card and to enter the hidden passageway in the end of the alley.
+            Suddenly you are surrounded by enemies, you must choose how to proceed with battle.`,
             link: ""
         }
     }
@@ -18,32 +19,28 @@ class LevelOneOne extends React.Component {
 
     handleClickLeft = () => {
         console.log("you decided to go left");
-        let newStoryLine = `You make a left at the fork and run into a Sardukar Grunt
-        time to fight`;
+        let newStoryLine = `You turn to the Elite to your left and engage.`;
         this.setState({isShowing: true});
         this.setState({message: newStoryLine});
-        this.setState({link: "/game"});
+        this.setState({link: "/game3"});
         console.log(this.state.link);
     };
 
     handleClickRight = () => {
-        let newStoryLine = `You turn right into an alley way and you see something shiny 
-        in the corner, you walk over to it and you picjk up a battery pack
-        for your shields system. Install it quickly.`;
+        let newStoryLine = `You turn to the right to take on a pair of Elites`;
         this.setState({isShowing: true});
         this.setState({message: newStoryLine});
-        this.setState({link: "/leveloneone"});
+        this.setState({link: "/game5"});
 
     };
     
     handleClickUp = () =>  {
         console.log("this button is up");
-        let newStoryLine = `You walk forward and you come to a fork in the road where you 
-        can only go left or right.`;
+        let newStoryLine = `You take on a group of Sardukar Grunts;`;
         console.log(newStoryLine)
         this.setState({isShowing: true});
         this.setState({message: newStoryLine});
-        this.setState({link: "/levelonetwo"});
+        this.setState({link: "/game4"});
     };
 
     openModalHandler = () => {
@@ -85,4 +82,4 @@ class LevelOneOne extends React.Component {
     };
 }
 
-export default LevelOneOne;
+export default LevelOneThree

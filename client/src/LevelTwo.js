@@ -1,60 +1,86 @@
 import React from "react";
 import LevelOne from "./components/LevelOne";
-import { Redirect } from "react-router-dom";
+import Modal from "./components/Modal/Modal";
 
-class LevelTwo extends React.Component {
+class LevelOneOne extends React.Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            isShowing : false,
+            message: `You are faced with a choice, go left, or go right.`,
+            link: ""
+        }
+    }
     
-    state = {
-        message: `You start your adventrure in the citadel, you come into a street, you can
-        continue forward, go left or right.`,
-        second: `You decide to turn left and you run into a Sardukar guard.`,
-        third: `You diced to walk forward and come to a for in the road.`,
-        forth: `You decide to turn to the right and end up walking into an alleyway, you 
-        find an extra battery pack for your shields system but a you're installing it one Sadukar 
-        Grunt and one Eleite corner you, it's time to fight`
-    };
 
     handleClickLeft = () => {
         console.log("you decided to go left");
-        console.log(this.state);
-        console.log(this.state.message);
-        console.log(this.state.second);
-        let newStoryLine = this.state.second;
-        console.log(newStoryLine)
+        let newStoryLine = `You take your chances with the left road and you see a Sardukar
+        Elite walking your way but he hasn't noticed you, you turn around to avoid conflict quickly.`;
+        this.setState({isShowing: true});
         this.setState({message: newStoryLine});
+        this.setState({link: "/levelonetwo"});
+        console.log(this.state.link);
     };
 
     handleClickRight = () => {
-        console.log("this button is right");
-        console.log(this.state.message[2]);
-        let newStoryLine = this.state.forth;
-        console.log(newStoryLine)
+        let newStoryLine = `You continue to the right alley, and wlaking towards you is a 
+        Grunt, you try to run but a Sardukar Elite comes up behind you, you are now
+        forced to fight two opponents for your cowardice.`;
+        this.setState({isShowing: true});
         this.setState({message: newStoryLine});
+        this.setState({link: "/game2"});
 
     };
     
     handleClickUp = () =>  {
         console.log("this button is up");
-        let newStoryLine = this.state.third;
+        let newStoryLine = `You walk into the wall like a moron.`;
         console.log(newStoryLine)
+        this.setState({isShowing: true});
         this.setState({message: newStoryLine});
+        this.setState({link: "/levelonetwo"});
     };
 
+    openModalHandler = () => {
+        this.setState({
+            isShowing: true
+        });
+    }
+
+    closeModalHandler = () => {
+        this.setState({
+            isShowing: false
+        });
+    }
 
     render() {
         
-        
+        console.log(this.state);
         return (
             <div>
+                { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+
                 <LevelOne
                     story={this.state.message}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
                 />
+                <Modal
+                    className="modal"
+                    show={this.state.isShowing}
+                    close={this.closeModalHandler}
+                    //link="/game"
+                    link={this.state.link}
+                    >
+                        {this.state.message}                
+                </Modal>
             </div>
         )
     };
 }
 
-export default LevelTwo;
+export default LevelOneOne;

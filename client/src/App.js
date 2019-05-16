@@ -54,8 +54,7 @@ class App extends Component {
                     close={this.closeModalHandler}
                     link={"/leveloneone"}
                     >
-                         Maybe aircrafts fly very high because they don't want to be seen in plane sight?
-                
+                        Let the adventure begin.                
                 </Modal>
             </div>
         );
