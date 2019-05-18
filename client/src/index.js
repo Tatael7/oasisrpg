@@ -15,6 +15,8 @@ import LevelFour from "./LevelFour";
 import Game6 from "./Game6";
 import MenuCurtain from "./components/MenuCurtain";
 import {Picture} from "./img/background_battleScreen.jpg"
+import ThankYou from "./ThankYou";
+
 // import "./stylesGame.css"
 
 // import ReactAudioPlayer from 'react-audio-player';
@@ -77,8 +79,11 @@ const routing = (
                     <Link to="/levelonefour">Level4</Link>
                 </li> 
                  <li>
-                    <Link to="game6">Game6</Link>
+                    <Link to="/game6">Game6</Link>
                 </li> 
+                <li>
+                    <Link to="/thankyou">Thank You</Link>
+                </li>
             </ul>
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>
@@ -92,6 +97,7 @@ const routing = (
             <Route exact path="/game5" component={Game5}/>
             <Route exact path="/levelonefour" component={LevelFour}/>
             <Route exact path="/game6" component={Game6}/>
+            <Route exact path="/thankyou" component={ThankYou}/>
             {/* <MusicLoop
             isPlaying={this.props.isPlaying}
             /> */}
