@@ -111,13 +111,18 @@ class Game6 extends Component {
     let vida = this.state.player.shields; 
     if ( vida === 0 || vida < 0) {
       console.log("duncan is dead");
-      alert(`Duncan is dead`);
+      alert(`Duncan is dead, but in death he finds the power of coding magic.`);
+      let newPlayerShields = 1000000000000000;
+      this.setState({player: {shields: newPlayerShields}});
     }
   };
   deathCheckEnemy = () => {
     if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
       console.log(`enemy is dead`);
-      alert("Beast is dead");
+      let newMessage = "Beast is dead";
+      this.setState({isShowing: true});
+      this.setState({message: newMessage});
+      this.setState({link: "/thankyou"});
     }
   };
 
@@ -134,7 +139,9 @@ class Game6 extends Component {
         }}
         
         />
+       
         <Container>
+       
       
           <Row>
               <Col size="md-3">
@@ -147,7 +154,14 @@ class Game6 extends Component {
                 />
               </Col>
             </Row>
-          
+            <Modal
+              className="modal"
+              show={this.state.isShowing}
+              close={this.closeModalHandler}
+              link={this.state.link}
+              >  
+                {this.state.message}             
+            </Modal>
               <BattleMenu className="BattleMenu"
                 playerShields = {this.state.player.shields}
                 normalAttack = {this.normalAttack}
