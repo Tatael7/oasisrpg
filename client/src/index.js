@@ -15,11 +15,11 @@ import LevelFour from "./LevelFour";
 import Game6 from "./Game6";
 import MenuCurtain from "./components/MenuCurtain";
 import {Picture} from "./img/background_battleScreen.jpg"
-import "./stylesGame.css"
+// import "./stylesGame.css"
 
-import ReactAudioPlayer from 'react-audio-player';
-// import MusicLoop from "./components/MusicLoop";
-import Music from "./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
+// import ReactAudioPlayer from 'react-audio-player';
+// // import MusicLoop from "./components/MusicLoop";
+// import Music from "./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
 
 
 
@@ -43,13 +43,13 @@ const routing = (
         />
         
         <ul>
-                {/* <li>
+                 <li>
                     <Link to="/">Home</Link>
                 </li>
                 <li>
                     <Link to="/game">Game</Link>
-                </li> */}
-                {/* <li>
+                </li> 
+                 <li>
                     <Link to="/store">Store</Link>
                 </li>
                 <li>
@@ -57,8 +57,8 @@ const routing = (
                 </li>
                 <li>
                     <Link to="/game2">Game2</Link>
-                </li> */}
-                {/* <li>
+                </li> 
+                 <li>
                     <Link to="/levelonetwo">Level2</Link>
                 </li>
                 <li>
@@ -75,10 +75,10 @@ const routing = (
                 </li>
                 <li>
                     <Link to="/levelonefour">Level4</Link>
-                </li> */}
-                {/* <li>
+                </li> 
+                 <li>
                     <Link to="game6">Game6</Link>
-                </li> */}
+                </li> 
             </ul>
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>
@@ -95,10 +95,10 @@ const routing = (
             {/* <MusicLoop
             isPlaying={this.props.isPlaying}
             /> */}
-            <ReactAudioPlayer
+            {/* <ReactAudioPlayer
                 src="./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
                 autoPlay={"true"}
-            
+             */}
                 />      
                  {/* { isLoaded ? 'Playing' : 'Loading' } */}
                 {/* <audio

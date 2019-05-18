@@ -122,8 +122,8 @@ class LevelOneOne extends React.Component {
                     close={this.closeModalHandler}
                     //link="/game"
                     link={this.state.link}
-                message={this.state.message}
-                    >             
+                    >
+                        {this.state.message}             
                 </Modal>
                 <LevelOne
                 style={{ 
