@@ -13,7 +13,7 @@ class Game6 extends Component {
     super();
     this.state = {
       player: {
-        shields: 1100
+        shields: 1500
         
       },
       enemy: {
@@ -50,7 +50,7 @@ class Game6 extends Component {
       this.setState({player: {shields: newPlayerShields}});
     }
     else {
-      let newPlayerShields = this.state.player.shields - 200;
+      let newPlayerShields = this.state.player.shields - 300;
       this.setState({player: {shields: newPlayerShields}});
     }
   };
@@ -90,7 +90,7 @@ class Game6 extends Component {
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = this.state.player.shields/10;
-    let damageDealt = 50 + pulseAttackCost;
+    let damageDealt = 300 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
   }

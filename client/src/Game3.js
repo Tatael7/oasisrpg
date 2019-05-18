@@ -14,11 +14,11 @@ class Game3 extends Component {
     super();
     this.state = {
       player: {
-        shields: 600
+        shields: 800
         
       },
       enemy: {
-        shields: 650
+        shields: 750
       },
       isAttacking: false,
       isShowing: false,
@@ -31,7 +31,7 @@ class Game3 extends Component {
     this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("normal attack");
     console.log(this.state.enemy.shields);
-    let newEnemyShields = this.state.enemy.shields - 100;
+    let newEnemyShields = this.state.enemy.shields - 150;
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({enemy: {shields: newEnemyShields}});
     this.enemyAttack();
@@ -43,7 +43,7 @@ class Game3 extends Component {
     this.setState({player: {shields: this.state.player.shields}});
     console.log(`The enemy attacks`);
     console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 50;
+    let newPlayerShields = this.state.player.shields - 200;
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
   };
@@ -85,7 +85,7 @@ class Game3 extends Component {
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = this.state.player.shields/10;
-    let damageDealt = 50 + pulseAttackCost;
+    let damageDealt = 200 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
   }

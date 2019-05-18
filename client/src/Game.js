@@ -50,7 +50,7 @@ class Game extends Component {
     this.setState({player: {shields: this.state.player.shields}});
     console.log(`The enemy attacks`);
     console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 50;
+    let newPlayerShields = this.state.player.shields - 70;
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
   };
