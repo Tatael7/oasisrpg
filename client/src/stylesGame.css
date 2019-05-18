@@ -1,3 +1,7 @@
+/* 
+.p{
+  font-size: 100px;
+} */
 
 .DuncanDiv.attacking{
   width: 100px;
@@ -8,27 +12,78 @@
   animation-name: example;
   animation-duration: 1s;
 }
+.sardaukarGrunt{
+  float:right
+}
 
+.Battery01{
+max-width: 30px;
+float: right
+}
 
+.Battery01.Removed{
+  visibility: hidden;
+}
+
+.sardaukarElite{
+  float:right
+}
+/* 
 .DuncanDiv.attack {
   border: 1px solid red;
 }
 .DuncanDiv.default {
   border: 1px solid blue;
-}
-
-/* .DuncanDiv2{
-
-  position: relative;
 } */
 
-
-/* html, body {
-  width : 100%;
-  height: 100%;
-  overflow: hidden;
+.enemyHolder{
+  float: right
 }
 
+
+/*Beast Harkonnen transition*/
+#beastHarkonnen {
+  /* width: 100px;
+  height: 50px;
+  background-color: red;
+  font-weight: bold; */
+  position: relative;
+  float:right;
+  -webkit-animation: mymove 10s ; /* Safari 4.0 - 8.0 */
+  animation: mymove 10s ;
+}
+#div1 {-webkit-animation-timing-function: linear;}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  from {right: -1000px; bottom:-200px;}
+  to {right: -50px; top:-2000px;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  from {right:-1000px; bottom:-200px;}
+  to {right: -100px; bottom:-20px;}
+}
+
+.beastRotating{
+  /* position: relative;
+  -webkit-animation-name: attackRotating;
+  -webkit-animation-duration: 10000ms;
+  animation-name: attackRotating;
+  animation-duration: 10000;
+  z-index: 1;
+  position: relative; */
+ }
+
+
+html, body {
+  width : 100%;
+  height: 100%;
+  max-height: 1000px;
+  overflow: hidden;
+}
+/*
 body {
   /* border: 1px solid black; */
 /* max-height: 400px;
@@ -36,12 +91,28 @@ body {
   box-sizing: border-box;
 } */ 
 
-/* p {
-  font   : 1em sans-serif;
-  margin : 0;
+ p {
+   background-color: aqua;
+   background-blend-mode: color-burn;
+  font   : 2.5em serif;
+  margin-top : 0%;
+  margin-left:10%;
   padding: .5em;
+  color:red;
+border-width: 100;
+border-color: black;
+stroke-width: 100;
+  position: relative;
+z-index: 1; 
+box-shadow: 200,
+
 }
 
+.modal-body{
+  color:red
+}
+
+/*
 ul {
   list-style: none;
 
@@ -90,11 +161,22 @@ li {
 .BattleDiv{
   width: 100%;
 }
-
+*/
 .BattleMenu{
   width:100%;
-} */
+  height:20%;
+  max-height: 200px;
+  /* margin-bottom: -200px; */
+  position: absolute;
+  z-index: 1;
+  bottom:-100%
+} 
 
+
+.ArrowUp{
+  /* margin-bottom: -20%; */
+margin-left:30%
+}
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
@@ -132,3 +214,99 @@ li {
   animation: rotating 2s linear infinite;
 }
 
+
+
+
+#lightningOrange{
+  border-radius: 50%;
+}
+
+ .Slash{
+  /* -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite; */
+  /* background-color: rgba(52, 52, 52, alpha); */
+  /* background-color: black; */
+  /* background-color: transparent;
+  opacity:50%; */
+  z-index: 3
+ }
+
+.pulsing{
+  /* position: relative; */
+  -webkit-animation-name: attack;
+  -webkit-animation-duration: 800ms;
+  animation-name: attack;
+  animation-duration: 800;
+  transform: translateX(115%);
+  transform: scaleX(-1);
+  /* background-color: rgba(52, 52, 52, alpha); */
+/* background-color: black; */
+/* background-color: transparent;
+opacity:50% */
+}
+
+.notPulsing{
+visibility: hidden;
+  /* background-color: rgba(255,255,255,0.5); */
+  /* background-color: Color.black;
+  background-color: transparent; */
+}
+
+.enemyNotPulsing{
+  visibility: hidden;
+    /* background-color: rgba(255,255,255,0.5); */
+    /* background-color: Color.black;
+    background-color: transparent; */
+  }
+
+  .enemyPulsing{
+    /* position: relative; */
+    -webkit-animation-name: attack;
+    -webkit-animation-duration: 800ms;
+    animation-name: attack;
+    animation-duration: 800;
+    transform: translateX(-115%)}
+
+    .fireExploding{
+      visibility: hidden;
+    }
+
+
+    .introMovie{
+      margin-top:-5%;
+    margin-left:3%;
+      max-height: 80%;
+      -moz-animation: cssAnimation 0s ease-in 35s forwards;
+      /* Firefox */
+      -webkit-animation: cssAnimation 0s ease-in 35s forwards;
+      /* Safari and Chrome */
+      -o-animation: cssAnimation 0s ease-in 35s forwards;
+      /* Opera */
+      animation: cssAnimation 0s ease-in 35s forwards;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+  }
+  @keyframes cssAnimation {
+      to {
+          width:0;
+          height:0;
+          overflow:hidden;
+      }
+  }
+  @-webkit-keyframes cssAnimation {
+      to {
+          width:0;
+          height:0;
+          visibility:hidden;
+      }
+  }
+
+  .modal.p{
+    z-index: 1;
+    position: relative;
+    /* margin-top: -200; */
+    font-family: 'Courier New', Courier, monospace;
+  }

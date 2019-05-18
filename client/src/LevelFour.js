@@ -64,7 +64,9 @@ class LevelFour extends React.Component {
         
         console.log(this.state);
         return (
-            <div>
+            <div 
+            style={{position:"fixed", zIndex:1, marginTop:-150}}
+            >
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
                 <Modal
                     className="modal"
@@ -72,14 +74,16 @@ class LevelFour extends React.Component {
                     close={this.closeModalHandler}
                     //link="/game"
                     link={this.state.link}
+                    message={this.state.message}   
                     >
-                        {this.state.message}                
+                                     
                 </Modal>
                 <LevelOne
                     story={this.state.message}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
+                    style={{position:"relative", zIndex:-1}}
                 />
                 
             </div>

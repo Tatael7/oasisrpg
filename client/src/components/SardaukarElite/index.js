@@ -1,5 +1,5 @@
 import React from "react";
-import Picture from "./sardaukar.gif";
+import Picture from "../../img/sardaukarElite.gif";
 
 function SardaukarElite (props) {
     return (
