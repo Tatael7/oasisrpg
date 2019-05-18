@@ -50,7 +50,7 @@ class Game extends Component {
     this.setState({player: {shields: this.state.player.shields}});
     console.log(`The enemy attacks`);
     console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 70;
+    let newPlayerShields = this.state.player.shields - 50;
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
   };
@@ -111,7 +111,7 @@ class Game extends Component {
       let newMessage = "Enemy is dead";
       this.setState({isShowing: true});
       this.setState({message: newMessage});
-      this.setState({link: "/leveloneone"});
+      this.setState({link: "/levelonetwo"});
 
     }
   };
@@ -119,13 +119,21 @@ class Game extends Component {
   render() {
     return (
       <div>
+               <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
+        style={{
+          position:"fixed",
+          zIndex:-10,
+        }}
+        
+        />
         <Modal
           className="modal"
           show={this.state.isShowing}
           close={this.closeModalHandler}
-          link={this.state.link}>  
-            {this.state.message}             
-        </Modal>
+          link={this.state.link}  
+          message={this.state.message}      
+        style={{zIndex:1, position:"relative"}}
+        />
         <Container>
           <Row>
               <Col size="md-3" >
@@ -148,7 +156,8 @@ class Game extends Component {
                 playerShields = {this.state.player.shields}
                 normalAttack = {this.normalAttack}
                 pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}               
+                enemyShields = {this.state.enemy.shields}   
+                style={{zIndex:1, position:"relative"}}            
               />
             
         </Container>

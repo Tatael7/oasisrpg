@@ -6,7 +6,7 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
-
+import "./stylesGame.css"
 
 class Game2 extends Component {
 
@@ -14,11 +14,11 @@ class Game2 extends Component {
     super();
     this.state = {
       player: {
-        shields: 800
+        shields: 600
         
       },
       enemy: {
-        shields: 1200
+        shields: 500
       },
       isAttacking: false,
       isShowing: false,
@@ -31,7 +31,7 @@ class Game2 extends Component {
     this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("normal attack");
     console.log(this.state.enemy.shields);
-    let newEnemyShields = this.state.enemy.shields - 120;
+    let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({enemy: {shields: newEnemyShields}});
     this.enemyAttack();
@@ -43,7 +43,7 @@ class Game2 extends Component {
     this.setState({player: {shields: this.state.player.shields}});
     console.log(`The enemy attacks`);
     console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 120;
+    let newPlayerShields = this.state.player.shields - 50;
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
   };
@@ -55,14 +55,14 @@ class Game2 extends Component {
     let roll = Math.floor(Math.random() * 6) + 1;
     console.log(`this is the roll ${roll}`);
     if (roll === 1 || roll === 4) {
-      let damageDealt = Math.floor((80/100) * this.state.enemy.shields);
+      let damageDealt = (80/100) * this.state.enemy.shields;
       console.log(`damage dealt ${damageDealt}`);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
       console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
     else if (roll === 2 || roll === 5) {
-      let damageDealt = Math.floor((40/100) * this.state.enemy.shields);
+      let damageDealt = (40/100) * this.state.enemy.shields;
       console.log(`damage dealt ${damageDealt}`);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
       console.log(`new enemy shields ${newEnemyShields}`);
@@ -84,8 +84,8 @@ class Game2 extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
-    let pulseAttackCost = Math.floor(this.state.player.shields/10);
-    let damageDealt = 120 + pulseAttackCost;
+    let pulseAttackCost = this.state.player.shields/10;
+    let damageDealt = 50 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
   }
@@ -109,7 +109,18 @@ class Game2 extends Component {
 
   render() {
     return (
-      <div>
+      <div    style={{
+        position:"fixed",
+        zIndex:1, marginTop:"-10%"
+      }}>
+               <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
+        style={{
+          position:"fixed",
+          zIndex:-10,
+          width:"100%"
+        }}
+        
+        />
         <Modal
           className="modal"
           show={this.state.isShowing}
@@ -117,13 +128,21 @@ class Game2 extends Component {
           link={this.state.link}>  
             {this.state.message}             
         </Modal>
-        <Container>
-          <Row>
+        <Container
+        style={{width:"2000", position:"absolute", zIndex:-1}}
+        >
+          <Row
+        //   style={{width:"1000px",
+        //   marginBottom:"100%"
+        // }}
+          >
               <Col size="md-3">
                 <DuncanIdaho/>
               </Col>
               <Col size="md-6">
-                <SardaukarGrunt/>
+                <SardaukarGrunt
+                className="sardaukarGrunt"
+                />
               </Col>
               <Col size="md-3">
                 <SardaukarElite/>
@@ -136,8 +155,12 @@ class Game2 extends Component {
                 normalAttack = {this.normalAttack}
                 pulseAttack = {this.pulseAttack}
                 enemyShields = {this.state.enemy.shields}
+                style={{zIndex:1, position:"relative",
+                height:"20%", marginTop:"-200%"
+                }}     
+
                 // enemyAttack = {this.state.enemy.attack}
-               
+              //  style={{marginBottom:100}}
               />
             
         </Container>

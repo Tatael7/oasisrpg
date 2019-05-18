@@ -1,8 +1,9 @@
 import React from "react";
 import LevelOne from "./components/LevelOne";
 import Modal from "./components/Modal/Modal";
+import "./stylesGame.css"
 
-class LevelOneOne extends React.Component {
+class LevelOneTwo extends React.Component {
 
     constructor() {
         super();
@@ -26,7 +27,7 @@ class LevelOneOne extends React.Component {
     };
 
     handleClickRight = () => {
-        let newStoryLine = `You continue to the right alley, and wlaking towards you is a 
+        let newStoryLine = `You continue to the right alley, and walking towards you is a 
         Grunt, you try to run but a Sardukar Elite comes up behind you, you are now
         forced to fight two opponents for your cowardice.`;
         this.setState({isShowing: true});
@@ -55,12 +56,29 @@ class LevelOneOne extends React.Component {
             isShowing: false
         });
     }
+    
 
     render() {
         
         console.log(this.state);
         return (
-            <div>
+            <div style={{
+            width:"100%",
+               
+            marginTop:"-10%",
+            position:"fixed",
+            zIndex:1,
+        }}
+            >    <img src={require("../src/img/Story02.Map02.jpg")} alt="Story02Map01" width="100%"
+            style={{
+                width:"100%",
+               
+            marginTop:"0",
+            position:"fixed",
+            zIndex:-10,
+            }}
+            />   
+
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
                 <Modal
                     className="modal"
@@ -72,10 +90,16 @@ class LevelOneOne extends React.Component {
                         {this.state.message}                
                 </Modal>
                 <LevelOne
+                         style={{
+                            width:"100%",
+                        // marginTop:"-80%",
+                        position:"fixed",
+                        zIndex:10,}} 
                     story={this.state.message}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
+                    // style={{marginTop:"-20%"}}
                 />
                
             </div>
@@ -83,4 +107,4 @@ class LevelOneOne extends React.Component {
     };
 }
 
-export default LevelOneOne;
+export default LevelOneTwo;

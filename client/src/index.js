@@ -14,21 +14,42 @@ import Game5 from "./Game5";
 import LevelFour from "./LevelFour";
 import Game6 from "./Game6";
 import MenuCurtain from "./components/MenuCurtain";
+import {Picture} from "./img/background_battleScreen.jpg"
+import "./stylesGame.css"
+
+import ReactAudioPlayer from 'react-audio-player';
+// import MusicLoop from "./components/MusicLoop";
+import Music from "./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
 
 
 
 const routing = (
-    <Router>
+
+
+    <Router
+    style={{
+        position:"absolute",
+        zIndex:-1,
+        // maxHeight:"50%"
+
+        }}
+    >
         <div>
-        <MenuCurtain/>
+        <MenuCurtain
+        style={{
+        position:"relative",
+        zIndex:10
+        }}
+        />
+        
         <ul>
-                <li>
+                {/* <li>
                     <Link to="/">Home</Link>
                 </li>
                 <li>
                     <Link to="/game">Game</Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                     <Link to="/store">Store</Link>
                 </li>
                 <li>
@@ -36,8 +57,8 @@ const routing = (
                 </li>
                 <li>
                     <Link to="/game2">Game2</Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                     <Link to="/levelonetwo">Level2</Link>
                 </li>
                 <li>
@@ -54,10 +75,10 @@ const routing = (
                 </li>
                 <li>
                     <Link to="/levelonefour">Level4</Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                     <Link to="game6">Game6</Link>
-                </li>
+                </li> */}
             </ul>
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>
@@ -71,8 +92,26 @@ const routing = (
             <Route exact path="/game5" component={Game5}/>
             <Route exact path="/levelonefour" component={LevelFour}/>
             <Route exact path="/game6" component={Game6}/>
+            {/* <MusicLoop
+            isPlaying={this.props.isPlaying}
+            /> */}
+            <ReactAudioPlayer
+                src="./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
+                autoPlay={"true"}
+            
+                />      
+                 {/* { isLoaded ? 'Playing' : 'Loading' } */}
+                {/* <audio
+                    preload="auto"
+                    src={require(`./IronMaiden-ToTameLand-8bit.mp3`)}
+                    loop="true"
+                    autoPlay={true}
+                    onLoadedData={() => this.playSong()}
+                /> */}
         </div>
-    </Router>
+        
+    </Router >
+    //   {/* <img src={Picture} width="100%"/> */}
 )
 
 ReactDOM.render(routing, document.getElementById("root"));

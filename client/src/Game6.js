@@ -6,6 +6,8 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
+import {BattleBackground} from "./img/background_battleScreen.jpg"
+import "./stylesGame.css"
 
 class Game6 extends Component {
 
@@ -13,50 +15,51 @@ class Game6 extends Component {
     super();
     this.state = {
       player: {
-        shields: 1500
-        
+        shields: 600       
       },
       enemy: {
-        shields: 3000
+        shields: 1000
       },
       isAttacking: false,
       isShowing: false,
       message: "",
-      link: ""
-    }
+      link: "",
+ 
+    // isBattleBackground:false
+    fireExploding:true,
+
+  }
   };
 
   normalAttack = () => {
     this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("normal attack");
     console.log(this.state.enemy.shields);
-    let newEnemyShields = this.state.enemy.shields - 300;
+    let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({enemy: {shields: newEnemyShields}});
     this.enemyAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
   }
+
+
+
+  
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
-    // let newPlayerShields = this.state.player.shields - 50;
-    // console.log(`player health ${newPlayerShields}`);
-    // this.setState({player: {shields: newPlayerShields}});
-    let roll = Math.floor(Math.random() * 3) + 1;
-    console.log(`this is beast's roll ${roll}`);
-    if ( roll === 2 ) {
-      let newPlayerShields = this.state.player.shields - this.state.player.shields;
-      this.setState({player: {shields: newPlayerShields}});
-    }
-    else {
-      let newPlayerShields = this.state.player.shields - 300;
-      this.setState({player: {shields: newPlayerShields}});
-    }
+    console.log(`The enemy attacks`);
+    console.log(this.state.player.shields);
+    let newPlayerShields = this.state.player.shields - 50;
+    console.log(`player health ${newPlayerShields}`);
+    this.setState({player: {shields: newPlayerShields}});
   };
   
   pulseAttack = () => {
     this.setState({enemy: {shields: this.state.enemy.shields}});
+    console.log("pulse attack");
+    console.log(this.state.enemy.shields);
     let roll = Math.floor(Math.random() * 6) + 1;
     console.log(`this is the roll ${roll}`);
     if (roll === 1 || roll === 4) {
@@ -82,15 +85,14 @@ class Game6 extends Component {
     }
     this.enemyPulseAttack();
     this.deathCheckEnemy();
-    this.deathCheckPlayer();
-    
+    this.deathCheckPlayer();  
 
   }
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = this.state.player.shields/10;
-    let damageDealt = 300 + pulseAttackCost;
+    let damageDealt = 50 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
   }
@@ -115,27 +117,45 @@ class Game6 extends Component {
 
   render() {
     return (
-      <div>
-       
+      <div className="GameContainer" style={{
+        position:"relative",
+        zIndex:0
+      }}>
+          <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
+        style={{
+          position:"fixed",
+          zIndex:-10,
+        }}
+        
+        />
         <Container>
+      
           <Row>
               <Col size="md-3">
                 <DuncanIdaho/>
               </Col>
               <Col size="md-9">
-                <BeastHarkonnen/>
+                <BeastHarkonnen
+                fireExploding={this.state.fireExploding}
+                style={{position:"relative", zIndex:1}} 
+                />
               </Col>
             </Row>
-            
-              <BattleMenu
+          
+              <BattleMenu className="BattleMenu"
                 playerShields = {this.state.player.shields}
                 normalAttack = {this.normalAttack}
                 pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}               
+                enemyShields = {this.state.enemy.shields}   
+                style={{
+                  position:"absolute", zIndex:10,
+                  marginBottom:"200%"
+              }}            
               />
             
         </Container>
         
+     
       </div>
     );
   }

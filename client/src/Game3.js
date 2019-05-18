@@ -6,6 +6,7 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
+import "./stylesGame.css"
 
 
 class Game3 extends Component {
@@ -14,11 +15,11 @@ class Game3 extends Component {
     super();
     this.state = {
       player: {
-        shields: 800
+        shields: 600
         
       },
       enemy: {
-        shields: 750
+        shields: 650
       },
       isAttacking: false,
       isShowing: false,
@@ -31,7 +32,7 @@ class Game3 extends Component {
     this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("normal attack");
     console.log(this.state.enemy.shields);
-    let newEnemyShields = this.state.enemy.shields - 150;
+    let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({enemy: {shields: newEnemyShields}});
     this.enemyAttack();
@@ -43,7 +44,7 @@ class Game3 extends Component {
     this.setState({player: {shields: this.state.player.shields}});
     console.log(`The enemy attacks`);
     console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 200;
+    let newPlayerShields = this.state.player.shields - 50;
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
   };
@@ -85,7 +86,7 @@ class Game3 extends Component {
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = this.state.player.shields/10;
-    let damageDealt = 200 + pulseAttackCost;
+    let damageDealt = 50 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
   }
@@ -110,6 +111,13 @@ class Game3 extends Component {
   render() {
     return (
       <div>
+               <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
+        style={{
+          position:"fixed",
+          zIndex:-10,
+        }}
+        
+        />
         <Modal
           className="modal"
           show={this.state.isShowing}
