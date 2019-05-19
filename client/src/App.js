@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Card from "./components/MenuSelections";
+import Title from "./components/Title";
 
 import Modal from './components/Modal/Modal';
 
@@ -27,9 +29,12 @@ class App extends Component {
     render () {
         return (
             <div>
+                <Title />
+                <Card />
+
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
 
-                <button className="open-modal-btn" onClick={this.openModalHandler}>New Game</button>
+                {/* <button className="open-modal-btn" onClick={this.openModalHandler}>New Game</button> */}
 
                 <Modal
                     className="modal"

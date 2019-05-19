@@ -92,24 +92,24 @@ body {
 } */ 
 
  p {
-   background-color: aqua;
+   background-color: none;
    background-blend-mode: color-burn;
   font   : 2.5em serif;
   margin-top : 0%;
   margin-left:10%;
   padding: .5em;
-  color:red;
+  color: white;
 border-width: 100;
-border-color: black;
+border-color: gold;
 stroke-width: 100;
   position: relative;
-z-index: 1; 
+/* z-index: 1;  */
 box-shadow: 200,
 
 }
 
 .modal-body{
-  color:red
+  color: black;
 }
 
 /*
