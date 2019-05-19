@@ -10,7 +10,7 @@ function BeastHarkonnen (props) {
                         }} 
                         className={props.fireExploding ? "fireExploding" : "fireNotExploding"        
                         } /> */}
-           <img src={Picture} alt="Beast Harkonnen" height="500" width="450"
+           <img src={Picture} alt="Beast Harkonnen" height="750"
                     style={{
                         position:"relative", zIndex:1,                
                         }} /> </div>

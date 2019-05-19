@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import BeastHarkonnen from "./components/BeastHarkonnen";
 import DuncanIdaho from "./components/DuncanIdaho";
-import SardaukarElite from "./components/SardaukarElite";
 import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
-import "./stylesGame.css";
-
+// import Picture from "../src/img/background_battleScreen.jpg";
+// import "./stylesGame.css";
+import "./test.css";
 
 class Game extends Component {
 
@@ -27,6 +26,8 @@ class Game extends Component {
       link: ""
     }
   };
+
+
 
   normalAttack = () => {
     
@@ -117,28 +118,31 @@ class Game extends Component {
   };
 
   render() {
+
     return (
       <div>
-               <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
-        style={{
-          position:"fixed",
-          zIndex:-10,
-        }}
         
-        />
         <Modal
           className="modal"
           show={this.state.isShowing}
           close={this.closeModalHandler}
           link={this.state.link}  
           message={this.state.message}      
-        style={{zIndex:1, position:"relative"}}
         />
-        <Container>
-          <Row>
+        
+        <Container 
+          // style={{battleStyle}}
+        >
+          {/* <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
+            style={{
+              zIndex:-10
+            }}
+          /> */}
+          <div >
+          <Row >
               <Col size="md-3" >
                 <DuncanIdaho 
-              isAttacking={this.state.isAttacking}            
+                  isAttacking={this.state.isAttacking}            
                 />
         
               </Col>
@@ -151,17 +155,24 @@ class Game extends Component {
 
               </Col>
             </Row>
-            
-              <BattleMenu
+            <BattleMenu
                 playerShields = {this.state.player.shields}
                 normalAttack = {this.normalAttack}
                 pulseAttack = {this.pulseAttack}
                 enemyShields = {this.state.enemy.shields}   
-                style={{zIndex:1, position:"relative"}}            
+                // style={{zIndex:1, position:"relative"}}            
               />
+            </div>
+              {/* <BattleMenu
+                playerShields = {this.state.player.shields}
+                normalAttack = {this.normalAttack}
+                pulseAttack = {this.pulseAttack}
+                enemyShields = {this.state.enemy.shields}   
+                // style={{zIndex:1, position:"relative"}}            
+              /> */}
             
         </Container>
-        
+       
       </div>
     );
   }

@@ -6,7 +6,7 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
-import "./stylesGame.css"
+// import "./stylesGame.css"
 
 
 class Game3 extends Component {

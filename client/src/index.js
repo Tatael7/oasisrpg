@@ -14,10 +14,9 @@ import Game5 from "./Game5";
 import LevelFour from "./LevelFour";
 import Game6 from "./Game6";
 import MenuCurtain from "./components/MenuCurtain";
-import {Picture} from "./img/background_battleScreen.jpg"
 import ThankYou from "./ThankYou";
+import Intro from "./Intro";
 
-// import "./stylesGame.css"
 
 // import ReactAudioPlayer from 'react-audio-player';
 // // import MusicLoop from "./components/MusicLoop";
@@ -29,12 +28,12 @@ const routing = (
 
 
     <Router
-    style={{
-        position:"absolute",
-        zIndex:-1,
-        // maxHeight:"50%"
+    // style={{
+    //     position:"absolute",
+    //     zIndex:-1,
+    //     // maxHeight:"50%"
 
-        }}
+    //     }}
     >
         <div>
         <MenuCurtain
@@ -44,7 +43,7 @@ const routing = (
         }}
         />
         
-        <ul>
+        {/* <ul>
                  <li>
                     <Link to="/">Home</Link>
                 </li>
@@ -84,7 +83,10 @@ const routing = (
                 <li>
                     <Link to="/thankyou">Thank You</Link>
                 </li>
-            </ul>
+                <li>
+                    <Link to="/intro">Intro</Link>
+                </li>
+            </ul> */}
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>
             <Route exact path="/leveloneone" component={LevelOneOne}/>
@@ -98,14 +100,14 @@ const routing = (
             <Route exact path="/levelonefour" component={LevelFour}/>
             <Route exact path="/game6" component={Game6}/>
             <Route exact path="/thankyou" component={ThankYou}/>
+            <Route exact path="/intro" component={Intro}/>
             {/* <MusicLoop
             isPlaying={this.props.isPlaying}
             /> */}
             {/* <ReactAudioPlayer
                 src="./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
                 autoPlay={"true"}
-             */}
-                />      
+                />             */}      
                  {/* { isLoaded ? 'Playing' : 'Loading' } */}
                 {/* <audio
                     preload="auto"
@@ -117,7 +119,6 @@ const routing = (
         </div>
         
     </Router >
-    //   {/* <img src={Picture} width="100%"/> */}
 )
 
 ReactDOM.render(routing, document.getElementById("root"));

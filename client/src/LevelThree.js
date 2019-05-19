@@ -60,7 +60,7 @@ class LevelOneThree extends React.Component {
         console.log(this.state);
         return (
             // style={{position:"fixed", zIndex:1, marginTop:"-10%"}}
-            <div >
+            <div  className="C">
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
                 <Modal
                     className="modal"
@@ -72,7 +72,6 @@ class LevelOneThree extends React.Component {
                     {this.state.message}
 
                 </Modal>                      
-                    {this.state.message}
                 <LevelOne
                     story={this.state.message}
                     handleClickLeft={this.handleClickLeft}

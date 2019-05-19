@@ -1,0 +1,25 @@
+.card {
+    background: none;
+    color: white;
+    padding-top:20px;
+    font-size: 30px;
+    text-align: center;
+} 
+ul {
+    list-style-type: none;
+}
+
+body {
+    background-image: url("./spaceBG.jpg");
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: gold;
+    text-decoration-line: none;
+  }

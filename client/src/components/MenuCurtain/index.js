@@ -26,7 +26,7 @@ class MenuCurtain extends React.Component {
                         <div className="overlay-content">
                             <div class="items">
                                 <a href="/">Main Menu</a>
-                                <a href="/leveloneone">New Game</a>
+                                <a href="/intro">New Game</a>
                                 <a href="/login">Login</a>
                                 <a href="/Store">Item Shop</a>
                                 <a href="/leaderBoard">Leader Board</a>
