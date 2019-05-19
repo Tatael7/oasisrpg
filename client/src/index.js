@@ -29,12 +29,12 @@ const routing = (
 
 
     <Router
-    style={{
-        position:"absolute",
-        zIndex:-1,
-        // maxHeight:"50%"
+    // style={{
+    //     position:"absolute",
+    //     zIndex:-1,
+    //     // maxHeight:"50%"
 
-        }}
+    //     }}
     >
         <div>
         <MenuCurtain
@@ -44,7 +44,7 @@ const routing = (
         }}
         />
         
-        <ul>
+        {/* <ul>
                  <li>
                     <Link to="/">Home</Link>
                 </li>
@@ -84,7 +84,7 @@ const routing = (
                 <li>
                     <Link to="/thankyou">Thank You</Link>
                 </li>
-            </ul>
+            </ul> */}
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>
             <Route exact path="/leveloneone" component={LevelOneOne}/>
@@ -104,8 +104,7 @@ const routing = (
             {/* <ReactAudioPlayer
                 src="./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
                 autoPlay={"true"}
-             */}
-                />      
+                />             */}      
                  {/* { isLoaded ? 'Playing' : 'Loading' } */}
                 {/* <audio
                     preload="auto"
