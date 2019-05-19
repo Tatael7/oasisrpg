@@ -25,9 +25,9 @@ float: right
   visibility: hidden;
 }
 
-.sardaukarElite{
+/* .sardaukarElite{
   float:right
-}
+} */
 /* 
 .DuncanDiv.attack {
   border: 1px solid red;
@@ -36,9 +36,9 @@ float: right
   border: 1px solid blue;
 } */
 
-.enemyHolder{
+/* .enemyHolder{
   float: right
-}
+} */
 
 
 /*Beast Harkonnen transition*/
@@ -52,7 +52,7 @@ float: right
   -webkit-animation: mymove 10s ; /* Safari 4.0 - 8.0 */
   animation: mymove 10s ;
 }
-#div1 {-webkit-animation-timing-function: linear;}
+/* #div1 {-webkit-animation-timing-function: linear;} */
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes mymove {
@@ -94,17 +94,19 @@ body {
  p {
    background-color: none;
    background-blend-mode: color-burn;
-  font   : 2.5em serif;
-  margin-top : 0%;
-  margin-left:10%;
-  padding: .5em;
-  color: white;
-border-width: 100;
-border-color: gold;
-stroke-width: 100;
+
+   font   : 2.5em serif;
+   margin-top : 0%;
+   margin-left:10%;
+   padding: .5em;
+   color: white;
+  border-width: 100;
+  border-color: gold;
+  stroke-width: 100;
   position: relative;
-/* z-index: 1;  */
-box-shadow: 200,
+  /* z-index: 1;  */
+  box-shadow: 200,
+
 
 }
 
@@ -176,7 +178,7 @@ li {
 
 .ArrowUp{
   /* margin-bottom: -20%; */
-margin-left:30%
+  margin-left:30%
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -278,7 +280,7 @@ visibility: hidden;
 
     .introMovie{
       margin-top:-5%;
-    margin-left:3%;
+      margin-left:3%;
       max-height: 80%;
       -moz-animation: cssAnimation 0s ease-in 35s forwards;
       /* Firefox */

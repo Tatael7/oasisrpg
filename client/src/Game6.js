@@ -7,7 +7,7 @@ import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
 import {BattleBackground} from "./img/background_battleScreen.jpg"
-import "./stylesGame.css"
+// import "./stylesGame.css"
 
 class Game6 extends Component {
 

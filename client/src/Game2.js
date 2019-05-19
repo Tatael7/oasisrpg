@@ -6,7 +6,7 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
-import "./stylesGame.css"
+// import "./stylesGame.css"
 
 class Game2 extends Component {
 
@@ -129,7 +129,8 @@ class Game2 extends Component {
             {this.state.message}             
         </Modal>
         <Container
-        style={{width:"2000", position:"absolute", zIndex:-1}}
+        // style={{width:"2000", position:"absolute", zIndex:-1}}
+        
         >
           <Row
         //   style={{width:"1000px",

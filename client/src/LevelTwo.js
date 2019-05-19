@@ -1,8 +1,7 @@
 import React from "react";
 import LevelOne from "./components/LevelOne";
 import Modal from "./components/Modal/Modal";
-import "./stylesGame.css"
-
+import "./test.css";
 class LevelOneTwo extends React.Component {
 
     constructor() {
@@ -10,8 +9,9 @@ class LevelOneTwo extends React.Component {
 
         this.state = {
             isShowing : false,
-            message: `You are faced with a choice, go left, or go right.`,
-            link: ""
+            story: `You are faced with a choice, go left, or go right.`,
+            link: "",
+            message: ""
         }
     }
     
@@ -60,48 +60,24 @@ class LevelOneTwo extends React.Component {
 
     render() {
         
-        console.log(this.state);
         return (
-            <div style={{
-            width:"100%",
-               
-            marginTop:"-10%",
-            position:"fixed",
-            zIndex:1,
-        }}
-            >    <img src={require("../src/img/Story02.Map02.jpg")} alt="Story02Map01" width="100%"
-            style={{
-                width:"100%",
-               
-            marginTop:"0",
-            position:"fixed",
-            zIndex:-10,
-            }}
-            />   
-
+            <div className="B">
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
                     close={this.closeModalHandler}
-                    //link="/game"
                     link={this.state.link}
-                    >
-                        {this.state.message}                
+                >
+                    {this.state.message}                
                 </Modal>
+
                 <LevelOne
-                         style={{
-                            width:"100%",
-                        // marginTop:"-80%",
-                        position:"fixed",
-                        zIndex:10,}} 
-                    story={this.state.message}
+                    story={this.state.story}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
-                    // style={{marginTop:"-20%"}}
                 />
-               
             </div>
         )
     };

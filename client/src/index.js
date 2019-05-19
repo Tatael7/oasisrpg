@@ -14,10 +14,9 @@ import Game5 from "./Game5";
 import LevelFour from "./LevelFour";
 import Game6 from "./Game6";
 import MenuCurtain from "./components/MenuCurtain";
-import {Picture} from "./img/background_battleScreen.jpg"
 import ThankYou from "./ThankYou";
+import Intro from "./Intro";
 
-// import "./stylesGame.css"
 
 // import ReactAudioPlayer from 'react-audio-player';
 // // import MusicLoop from "./components/MusicLoop";
@@ -84,6 +83,11 @@ const routing = (
                 <li>
                     <Link to="/thankyou">Thank You</Link>
                 </li>
+
+                <li>
+                    <Link to="/intro">Intro</Link>
+                </li>
+
             </ul> */}
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>
@@ -98,6 +102,7 @@ const routing = (
             <Route exact path="/levelonefour" component={LevelFour}/>
             <Route exact path="/game6" component={Game6}/>
             <Route exact path="/thankyou" component={ThankYou}/>
+            <Route exact path="/intro" component={Intro}/>
             {/* <MusicLoop
             isPlaying={this.props.isPlaying}
             /> */}
@@ -116,7 +121,6 @@ const routing = (
         </div>
         
     </Router >
-    //   {/* <img src={Picture} width="100%"/> */}
 )
 
 ReactDOM.render(routing, document.getElementById("root"));

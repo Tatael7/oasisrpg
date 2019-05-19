@@ -2,14 +2,14 @@ import React from "react";
 import ArrowLeft from "../ArrowLeft";
 import ArrowUp from "../ArrowUp";
 import ArrowRight from "../ArrowRight";
-import  "../../../src/stylesGame.css";
+// import  "../../../src/stylesGame.css";
 // import {Picture} from "../../img/background_battleScreen.jpg"
 
 function BattleMenu(props)  {
    
     return (
         <div className="alert alert-primary" >
-            <div className="container BattleMenu"    >
+            <div className="container BattleMenu">
                 <div className="row">
                     <div className="col-sm-3">
                         <button 
@@ -55,7 +55,6 @@ function BattleMenu(props)  {
                 </div>
             </div>
      
-            {/* <img src={Picture} alt="BattleBackground" height="100%" width="100%" className={props.isBattleBackground ? "BattleBackground visible" : "BattleBackground"}/> */}
         </div>
     );
 }

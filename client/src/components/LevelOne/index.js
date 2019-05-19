@@ -1,7 +1,6 @@
 import React from "react";
 import BattleMenu from "../BattleMenu";
 import Story from "../Story";
-import "../../stylesGame.css"
 
 function LevelOne (props) {
 
@@ -10,7 +9,6 @@ function LevelOne (props) {
             <div>
                 <Story
                     story={props.story}
-                    style={{position:"fixed", zIndex:1}}
                 />
             </div>
             <div>
@@ -18,9 +16,7 @@ function LevelOne (props) {
                     handleClickLeft={props.handleClickLeft}
                     handleClickRight={props.handleClickRight}
                     handleClickUp={props.handleClickUp}
-                    style={{
-                        bottom:"0",
-                        position:"fixed", zIndex:-3}}
+                    
                 />
             </div>
         </div>
