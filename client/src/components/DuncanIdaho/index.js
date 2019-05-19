@@ -19,9 +19,11 @@ function DuncanIdaho (props) {
                 className={props.isPulsing ? "pulsing" : "notPulsing"        
         } /></div> */}
 
+
             <img src={Picture} alt="Duncan Idaho" height="600" 
             // style={{position:"fixed", zIndex:-1}} className={props.isAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}
             />
+
         </div>
     );
 }

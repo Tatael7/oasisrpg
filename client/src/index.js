@@ -83,9 +83,11 @@ const routing = (
                 <li>
                     <Link to="/thankyou">Thank You</Link>
                 </li>
+
                 <li>
                     <Link to="/intro">Intro</Link>
                 </li>
+
             </ul> */}
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>

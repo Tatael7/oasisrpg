@@ -7,7 +7,9 @@ function MenuSelect () {
         <div className="card">
             <ul>
                 <li>
+
                     <a href="/intro">New Game</a>
+
                 </li>
                 <li>
                     <a href="/Login">Login</a>
