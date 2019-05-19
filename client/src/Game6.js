@@ -130,29 +130,67 @@ class Game6 extends Component {
     return (
       <div className="GameContainer" style={{
         position:"relative",
-        zIndex:0
+        zIndex:1,
+       
+        // height:"500px"
       }}>
           <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
         style={{
           position:"fixed",
           zIndex:-10,
+          // maxHeight:"600px"
         }}
         
         />
        
-        <Container>
+        <Container
+        style={{
+          // position:"absolute",
+          // zIndex:1,
+          // height:"100"
+        }}
+        >
        
       
           <Row>
               <Col size="md-3">
-                <DuncanIdaho/>
+                <DuncanIdaho
+                // style={{
+                //   position:"relative"
+
+                // }}
+                />
               </Col>
               <Col size="md-9">
                 <BeastHarkonnen
                 fireExploding={this.state.fireExploding}
-                style={{position:"relative", zIndex:1}} 
-                />
+                style={{position:"relative", zIndex:1,
+                padding:0
+              }} 
+                />    <Modal
+                className="modal"
+                show={this.state.isShowing}
+                close={this.closeModalHandler}
+                link={this.state.link}
+                >  
+                  {this.state.message}             
+              </Modal>
               </Col>
+            </Row >
+            <Row>
+          
+              <BattleMenu className="BattleMenu"
+                playerShields = {this.state.player.shields}
+                normalAttack = {this.normalAttack}
+                pulseAttack = {this.pulseAttack}
+                enemyShields = {this.state.enemy.shields}   
+                  style={{
+                  
+                    position:"relative", zIndex:10,
+                  //  marginBottom:"20%  "
+                  
+                }}            
+              />
             </Row>
             <Modal
               className="modal"
@@ -162,18 +200,7 @@ class Game6 extends Component {
               >  
                 {this.state.message}             
             </Modal>
-              <BattleMenu className="BattleMenu"
-                playerShields = {this.state.player.shields}
-                normalAttack = {this.normalAttack}
-                pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}   
-                style={{
-                  position:"absolute", zIndex:10,
-                  marginBottom:"200%"
-              }}            
-              />
-            
-        </Container>
+        </Container>  
         
      
       </div>

@@ -20,7 +20,8 @@ function DuncanIdaho (props) {
         } /></div> */}
 
             <img src={Picture} alt="Duncan Idaho" height="300" width="300" style={{
-            position:"fixed", zIndex:-1}} className={props.isAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}/>
+            position:"fixed", zIndex:-1}} 
+            className={props.isAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}/>
         </div>
     );
 }

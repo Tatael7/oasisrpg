@@ -36,15 +36,21 @@ const routing = (
 
         }}
     >
-        <div>
+        <div 
+        style={{maxHeight:"900px",
+        zIndex:1,
+    
+    
+            }}
+        >
         <MenuCurtain
         style={{
         position:"relative",
-        zIndex:10
+        zIndex:20
         }}
         />
         
-        <ul>
+        {/* <ul>
                  <li>
                     <Link to="/">Home</Link>
                 </li>
@@ -84,7 +90,7 @@ const routing = (
                 <li>
                     <Link to="/thankyou">Thank You</Link>
                 </li>
-            </ul>
+            </ul> */}
             <Route exact path="/" component={App} />
             <Route exact path="/store" component={Store}/>
             <Route exact path="/leveloneone" component={LevelOneOne}/>
