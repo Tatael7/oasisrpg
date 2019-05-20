@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "./components/Modal/Modal";
-import introMovie from "../src/img/introMovie.gif";
+import introMovie from "../src/img/Ginaz_level2_cutSc1.gif";
 
 
 class Intro extends React.Component {
