@@ -17,24 +17,8 @@ import MenuCurtain from "./components/MenuCurtain";
 import ThankYou from "./ThankYou";
 import Intro from "./Intro";
 
-
-// import ReactAudioPlayer from 'react-audio-player';
-// // import MusicLoop from "./components/MusicLoop";
-// import Music from "./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
-
-
-
 const routing = (
-
-
-    <Router
-    // style={{
-    //     position:"absolute",
-    //     zIndex:-1,
-    //     // maxHeight:"50%"
-
-    //     }}
-    >
+    <Router>
         <div>
         <MenuCurtain
         style={{
@@ -103,25 +87,9 @@ const routing = (
             <Route exact path="/game6" component={Game6}/>
             <Route exact path="/thankyou" component={ThankYou}/>
             <Route exact path="/intro" component={Intro}/>
-            {/* <MusicLoop
-            isPlaying={this.props.isPlaying}
-            /> */}
-            {/* <ReactAudioPlayer
-                src="./components/MusicLoop/IronMaiden-ToTameLand8-Bit.mp3"
-                autoPlay={"true"}
-                />             */}      
-                 {/* { isLoaded ? 'Playing' : 'Loading' } */}
-                {/* <audio
-                    preload="auto"
-                    src={require(`./IronMaiden-ToTameLand-8bit.mp3`)}
-                    loop="true"
-                    autoPlay={true}
-                    onLoadedData={() => this.playSong()}
-                /> */}
+            
         </div>
-        
     </Router >
 )
-
 ReactDOM.render(routing, document.getElementById("root"));
 

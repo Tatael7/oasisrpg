@@ -5,11 +5,9 @@ import "./style.css";
 function MenuSelect () {
     return (
         <div className="card">
-            <ul>
+            <ul id="menuul">
                 <li>
-
                     <a href="/intro">New Game</a>
-
                 </li>
                 <li>
                     <a href="/Login">Login</a>

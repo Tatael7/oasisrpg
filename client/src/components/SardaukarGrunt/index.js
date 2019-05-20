@@ -4,7 +4,7 @@ import Picture from "./sardaukarGrunt.gif";
 function SardaukarGrunt () {
     return (
         <div id="sardaukarGrunt">
-            <img src={Picture} alt="Sardaukar Grunt" height="600"/>
+            <img src={Picture} alt="Sardaukar Grunt" height="400"/>
         </div>
     );
 }

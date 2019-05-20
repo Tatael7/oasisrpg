@@ -1,12 +1,10 @@
 import React from "react";
 import Valid from "card-validator";
-import repairShield from "./item_healthUp.png";
-import increaseMaxHealth from "./item_upMaxHealth.png";
-import Crissaegrim from "./item_swordCrissaegrim.png";
-import GodMode from "./item_godMode.png";
-import MenuCurtain from "../../components/MenuCurtain";
-import { Container, Row, Col } from "../Grid";
-import "./style.css";
+import Potion from "./potion.jpeg";
+import ExBoost from "./exBoost.jpeg";
+import Crissaegrim from "./criss.png";
+import GodMode from "./godMode.jpg";
+
 
 let numberValidation = Valid.number("4111");
 
@@ -27,36 +25,33 @@ class MicroTransactions extends React.Component {
     render(){
         console.log(numberValidation);
     return(
-
         <div className="container">
-                   <MenuCurtain/>
-                   <Container>
-          <Row>
-              <Col size="md-6" >
+       
+            <div className="row">
+                <div className="col-lg-6">
                     <ol>
-                        <li className="itemSeparation">
-                            <p>Buy a battery module to repair your shield.</p>
-                            <img src={repairShield} className="border" alt="Repair Shield" height="200"/>
+                        <li>
+                            <img src={Potion} alt="a potion" height="50" width="50"/>
+                            <p>Buy a health potion to boost your overall health.</p>
                         </li>
-                        <li className="itemSeparation">
-                            <p>Buy a new shield transistor to increase max shield.</p>
-                            <img src={increaseMaxHealth} alt="Increase Max Sheild Strength" height="275"/>
+                        <li>
+                            <img src={ExBoost} alt="an experience boost" height="50" width="50"/>
+                            <p>Buy a medallion that boosts your experience ten-fold.</p>
                         </li>
-                        <li className="itemSeparation">
-                            <p>Buy the Legendary Sword Crissaegrim for critical hits.</p>
-                            <img src={Crissaegrim} alt="legendary sword Crissaegrim" height="400"/>
+                        <li>
+                            <img src={Crissaegrim} alt="legendary sword Crissaegrim" height="50" width="50"/>
+                            <p>Buy the Legendary Sword Crissaegrim and rend your enemies to ribbons.</p>
                         </li>
-                        <li className="itemSeparation">
-                            <p>Aquire God Mode for invulnerablity.</p>
-                            <img src={GodMode} alt="Metaphysical Evolution" height="250"/>
+                        <li>
+                            <img src={GodMode} alt="final form Duncan" height="100" width="50"/>
+                            <p>Aquire God Mode Duncan to breeze through the game.</p>
                         </li>
                     </ol>
-                </Col>
-
-              <Col size="md-6" >
+                </div>
+                <div className="col-lg6">
                     <form className="card card-body">
-                        <h2>Credit Card Entry</h2>
-                        {/* <label htmlFor="fname">Accepted Cards</label> */}
+                        <h3>Payment</h3>
+                        <label htmlFor="fname">Accepted Cards</label>
                         <div className="icon-container">
                             {/* <i class="fa fa-cc-visa" style="color:navy;"></i>
                             <i class="fa fa-cc-amex" style="color:blue;"></i>
@@ -78,9 +73,8 @@ class MicroTransactions extends React.Component {
 
                     <button className="btn btn-danger">Submit</button>
 
-                </Col>
-              </Row>
-            </Container>
+                </div>
+            </div>
         </div>
     )
     }

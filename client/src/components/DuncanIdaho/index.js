@@ -1,30 +1,39 @@
 import React from "react";
 import Picture from "../../img/duncanIdaho.gif";
+import Power from "../../img/XSNu.gif";
+
 
 function DuncanIdaho (props) {
 
     return (
-        <div DuncanIdahoHolder style={{position:"relative"}} >
-        {/* <div style={{
-            // backgroundColor: 'rgba(52, 52, 52, alpha)',
-            // backgroundColor: "transparent"
-            }}>
-            <img src={require('./slashPlayer1.gif')} alt ="Slash" height ="300" width="300" style={{
-                position:"fixed", zIndex:3,
-                // opacity: 5
-                // backgroundColor: "alpha",
-                // backgroundColor: "transparent",
-                // opacity:"50%"
+         <div id="duncanIdaho">
+              <img src={Power}
+                id="powerUp"
+                alt="power up"
+                height="500"
+                width="500"
+                style={{
+                    position: "absolute",
+                    zIndex:2
+                }}
+                className={props.poweredUp ? "poweredUp" : "poweredNotUp"}        
+
+             />
+             {/* <img 
+            src={require('../../img/fire-explosion-animation-2.gif')} 
+            id="fireExplosion" alt ="fireExplosion" height ="500" width="450" 
+            style={{
+                position:"fixed", zIndex:5,
+                    
             }} 
-                className={props.isPulsing ? "pulsing" : "notPulsing"        
-        } /></div> */}
-
-
-            <img src={Picture} alt="Duncan Idaho" height="600" 
-            // style={{position:"fixed", zIndex:-1}} className={props.isAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}
-            />
-
+            className={props.fireExploding ? "fireExploding" : "fireNotExploding"        
+            } 
+            /> */}
+            <img src={Picture} alt="Duncan Idaho" height="400"
+                className={props.isAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}/>
+            
         </div>
+      
     );
 }
 
