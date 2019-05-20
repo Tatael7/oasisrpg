@@ -1,6 +1,8 @@
 import React from "react";
 import LevelOne from "./components/LevelOne";
 import Modal from "./components/Modal/Modal";
+// import "./stylesGame.css";
+import "./test.css";
 
 class LevelOneOne extends React.Component {
 
@@ -67,37 +69,26 @@ class LevelOneOne extends React.Component {
     render() {
         
         return (
-            <div>
+            <div className="E">
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+
                 <Modal
                     className="modal"
-                    // style={{   
-                    //     zIndex:3,
-                    //     position:"relative",
-                    //     marginTop:0
-                    //  }}
                     show={this.state.isShowing}
                     close={this.closeModalHandler}
                     link={this.state.link}
                     >
                         {this.state.message}             
                 </Modal>
-                <div className="E">>
+                <img src={require("../src/img/Spinning-orb-new-GIF-2.gif")}   alt="Battery01" height="100"
+                       
+                /> 
                 <LevelOne
-                    style={{ 
-                        borderWidth:"100",
-                        borderColor:"black",
-                        backgroundColor: 'red',
-                        flex:1,
-                        position:"fixed",
-                        zIndex:1
-                    }}
                     story={this.state.story}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
                 />
-                </div>
             </div>
         )
     };

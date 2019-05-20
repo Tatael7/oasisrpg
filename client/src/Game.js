@@ -4,8 +4,6 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
-// import Picture from "../src/img/background_battleScreen.jpg";
-// import "./stylesGame.css";
 import "./test.css";
 
 class Game extends Component {
@@ -120,57 +118,40 @@ class Game extends Component {
   render() {
 
     return (
+      
       <div>
-        
         <Modal
           className="modal"
           show={this.state.isShowing}
           close={this.closeModalHandler}
-          link={this.state.link}  
-          message={this.state.message}      
-        />
+          link={this.state.link}
+        >
+          {this.state.message}             
+        </Modal>
         
         <Container 
-          // style={{battleStyle}}
         >
-          {/* <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
-            style={{
-              zIndex:-10
-            }}
-          /> */}
-          <div >
+          <div className="A">
           <Row >
               <Col size="md-3" >
                 <DuncanIdaho 
                   isAttacking={this.state.isAttacking}            
                 />
-        
               </Col>
               <Col size="md-6"></Col>
               <Col size="md-3">
-
                 <SardaukarGrunt
                 isAttacking={this.state.isAttacking} 
                 />                
-
               </Col>
             </Row>
-            <BattleMenu
-                playerShields = {this.state.player.shields}
-                normalAttack = {this.normalAttack}
-                pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}   
-                // style={{zIndex:1, position:"relative"}}            
-              />
             </div>
-              {/* <BattleMenu
+               <BattleMenu
                 playerShields = {this.state.player.shields}
                 normalAttack = {this.normalAttack}
                 pulseAttack = {this.pulseAttack}
                 enemyShields = {this.state.enemy.shields}   
-                // style={{zIndex:1, position:"relative"}}            
-              /> */}
-            
+              /> 
         </Container>
        
       </div>

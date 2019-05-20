@@ -57,16 +57,13 @@ class LevelOneThree extends React.Component {
 
     render() {
         
-        console.log(this.state);
         return (
-            // style={{position:"fixed", zIndex:1, marginTop:"-10%"}}
             <div  className="C">
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
                     close={this.closeModalHandler}
-                    //link="/game"
                     link={this.state.link}
                 >
                     {this.state.message}
@@ -77,9 +74,7 @@ class LevelOneThree extends React.Component {
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
-                    // style={{position: "fixed", zIndex:1,
-                    // marginTop:"-100%"
-                    // }}
+                    
                 />
                 
             </div>

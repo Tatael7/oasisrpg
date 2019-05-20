@@ -4,7 +4,7 @@ import "./style.css";
 
 function ShopTitle () {
     return (
-        <div>
+        <div id="shopdiv">
             <img src={MenuTitle} alt="Item Store" width="800px"/>
         </div>
     );

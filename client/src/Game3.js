@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import BeastHarkonnen from "./components/BeastHarkonnen";
 import DuncanIdaho from "./components/DuncanIdaho";
 import SardaukarElite from "./components/SardaukarElite";
-import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
-// import "./stylesGame.css"
 
 
 class Game3 extends Component {
@@ -15,11 +12,11 @@ class Game3 extends Component {
     super();
     this.state = {
       player: {
-        shields: 800
+        shields: 600
         
       },
       enemy: {
-        shields: 750
+        shields: 650
       },
       isAttacking: false,
       isShowing: false,
@@ -32,7 +29,7 @@ class Game3 extends Component {
     this.setState({enemy: {shields: this.state.enemy.shields}});
     console.log("normal attack");
     console.log(this.state.enemy.shields);
-    let newEnemyShields = this.state.enemy.shields - 150;
+    let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({enemy: {shields: newEnemyShields}});
     this.enemyAttack();
@@ -44,7 +41,7 @@ class Game3 extends Component {
     this.setState({player: {shields: this.state.player.shields}});
     console.log(`The enemy attacks`);
     console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 200;
+    let newPlayerShields = this.state.player.shields - 50;
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
   };
@@ -56,14 +53,14 @@ class Game3 extends Component {
     let roll = Math.floor(Math.random() * 6) + 1;
     console.log(`this is the roll ${roll}`);
     if (roll === 1 || roll === 4) {
-      let damageDealt = Math.floor((80/100) * this.state.enemy.shields);
+      let damageDealt = (80/100) * this.state.enemy.shields;
       console.log(`damage dealt ${damageDealt}`);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
       console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
     else if (roll === 2 || roll === 5) {
-      let damageDealt = Math.floor((40/100) * this.state.enemy.shields);
+      let damageDealt = (40/100) * this.state.enemy.shields;
       console.log(`damage dealt ${damageDealt}`);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
       console.log(`new enemy shields ${newEnemyShields}`);
@@ -85,8 +82,8 @@ class Game3 extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
-    let pulseAttackCost = Math.floor(this.state.player.shields/10);
-    let damageDealt = 200 + pulseAttackCost;
+    let pulseAttackCost = this.state.player.shields/10;
+    let damageDealt = 50 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
   }
@@ -111,13 +108,6 @@ class Game3 extends Component {
   render() {
     return (
       <div>
-               <img src={require("../src/img/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
-        style={{
-          position:"fixed",
-          zIndex:-10,
-        }}
-        
-        />
         <Modal
           className="modal"
           show={this.state.isShowing}
@@ -126,6 +116,7 @@ class Game3 extends Component {
             {this.state.message}             
         </Modal>
         <Container>
+          <div className="A">
           <Row>
               <Col size="md-3">
                 <DuncanIdaho/>
@@ -134,8 +125,8 @@ class Game3 extends Component {
               <Col size="md-3">
                 <SardaukarElite/>                
               </Col>
-            </Row>
-            
+          </Row>
+          </div>
               <BattleMenu
                 playerShields = {this.state.player.shields}
                 // playerAttack = {this.state.player.attack}

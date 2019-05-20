@@ -2,6 +2,7 @@ import React from "react";
 import BattleMenu from "../BattleMenu";
 import Story from "../Story";
 
+
 function LevelOne (props) {
 
     return (
@@ -16,7 +17,6 @@ function LevelOne (props) {
                     handleClickLeft={props.handleClickLeft}
                     handleClickRight={props.handleClickRight}
                     handleClickUp={props.handleClickUp}
-                    
                 />
             </div>
         </div>

@@ -4,7 +4,7 @@ import "./style.css";
 
 function Title () {
     return (
-        <div>
+        <div id="titleDiv">
             <img src={MenuTitle} alt="Swordmasters of Ginaz" width="900px"/>
         </div>
     );
