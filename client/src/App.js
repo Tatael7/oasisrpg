@@ -26,12 +26,32 @@ class App extends Component {
         });
     }
 
+        // sessionStorage.clear();
+
+        // sessionStorage.setItem("playerSheilds", 700);
+
+        // console.log(sessionStorage.getItem("playershields"));
+
+    
+
+    
+
     render () {
+
+        function initiateStats(){
+            sessionStorage.clear();
+            sessionStorage.setItem("playerShields", 700);
+            sessionStorage.setItem("attack", `this is the attack ${100}`);
+    
+            console.log(sessionStorage.getItem("playerShields"));
+            console.log(sessionStorage.getItem("attack"));
+        };
+
         return (
             <div>
                 <Title />
                 <Card />
-
+                {initiateStats()}
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
 
                 {/* <button className="open-modal-btn" onClick={this.openModalHandler}>New Game</button> */}

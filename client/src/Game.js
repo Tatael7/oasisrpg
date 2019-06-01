@@ -12,7 +12,7 @@ class Game extends Component {
     super();
     this.state = {
       player: {
-        shields: 600
+        shields: sessionStorage.getItem("playerShields")
         
       },
       enemy: {
@@ -108,6 +108,7 @@ class Game extends Component {
     if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
       console.log(`enemy is dead`);
       let newMessage = "Enemy is dead";
+      sessionStorage.setItem("playerShields", this.state.player.shields);
       this.setState({isShowing: true});
       this.setState({message: newMessage});
       this.setState({link: "/levelonetwo"});

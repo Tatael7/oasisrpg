@@ -13,7 +13,7 @@ class Game2 extends Component {
     super();
     this.state = {
       player: {
-        shields: 600
+        shields: sessionStorage.getItem("playerShields")
         
       },
       enemy: {
